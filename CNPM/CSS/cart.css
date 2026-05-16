@@ -1,0 +1,49 @@
+body{
+    font-family:Arial;background:#f5f5f5
+}
+
+h2{
+    text-align:center
+}
+
+.cart-container{
+    display:flex;
+    gap:20px;
+    width:90%;
+    margin:30px auto;
+}
+
+.cart-left{
+    flex:3;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.cart-right{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.cart-right button{
+    width:100%;
+    padding:12px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:8px;
+    margin-top:10px;
+}

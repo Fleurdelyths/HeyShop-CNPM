@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/login.css" />
+</head>
+<body>
+    <h2 class="text-center fw-bold mt-4">
+        Đăng nhập
+    </h2>
+
+    <div class="login-box">
+        <form id="loginForm" method="post">
+            <div class="container">
+                <!-- EMAIL -->
+                <div class="row align-items-center mb-5 justify-content-center">
+                    <div class="col-md-2 text-md-end text-center mb-2 mb-md-0">
+                        <label>Email</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="loginUser"class="form-control custom-input">
+                    </div>
+                </div>
+                <!-- PASSWORD -->
+                <div class="row align-items-center mb-5 justify-content-center">
+                    <div class="col-md-2 text-md-end text-center mb-2 mb-md-0">
+                        <label>Mật khẩu</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" id="loginPass" class="form-control custom-input">
+                    </div>
+                </div>
+                <!-- QUÊN MẬT KHẨU -->
+                <div class="text-center mb-4">
+                    <a href="#" id="forgotBtn">Quên mật khẩu?</a>
+                </div>
+                <!-- BUTTON -->
+                <div class="text-center mb-4">
+                    <button type="submit" class="login-btn">
+                        Đăng nhập
+                    </button>
+                </div>
+                <!-- ĐĂNG KÝ -->
+                <div class="text-center">
+                    Chưa có tài khoản?
+                    <a href="register.html" class="ms-3">Đăng ký</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

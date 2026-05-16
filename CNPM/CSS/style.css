@@ -1,0 +1,393 @@
+:root {
+  --blue-light: #d4e9f7;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Banner CSS - Xử lý ảnh image1 full màn hình */
+.banner-section {
+  width: 100%;
+  height: 450px;
+  background-image: url("../image/image2.png"); /* Đảm bảo file có đuôi .jpg hoặc .png nếu có */
+  background-size: cover; /* Quan trọng: Để ảnh phủ kín khung hình chữ nhật */
+  background-position: center; /* Quan trọng: Để ảnh luôn nằm giữa */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.banner-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(98, 23, 23, 0.2); /* Phủ trắng mờ 20% */
+  z-index: 1;
+}
+
+.banner-text-content h1 {
+  letter-spacing: 4px;
+}
+
+.decor-box {
+  position: relative;
+  height: 50px;
+}
+
+.decor-x {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.decor-dots {
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(#000 15%, transparent 16%);
+  background-size: 10px 10px;
+  opacity: 0.1;
+}
+
+/* Product Card */
+.section-divider {
+  border-bottom: 1px solid #ddd;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.section-divider span {
+  background: #fff;
+  padding: 0 15px;
+  font-weight: bold;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+/*Size*/
+.size-box{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 3px;
+}
+
+.size-box:hover{
+    background: black;
+    color: white;
+}
+
+input[type="radio"]:checked + .size-box{
+    background: black;
+    color: white;
+}
+
+/*Màu*/
+.color-select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+/* ẨN RADIO */
+.color-select input{
+    display: none;
+}
+/* CHẤM MÀU */
+.color-item{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+.color-item:hover{
+    transform: scale(1.1);
+}
+.color-select input:checked + .color-item{
+    border: 2px solid #222;
+    transform: scale(1.1);
+}
+/* Footer */
+.footer {
+  background-color: var(--blue-light);
+}
+
+
+/* ===== CONTACT ===== */
+.contact-title{
+    color: #b5220f;
+    font-weight: bold;
+}
+
+.contact-desc{
+    color: #b5220f;
+    font-weight: 600;
+}
+
+.contact-card{
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: none;
+}
+
+.contact-card h2{
+    color: #b5220f;
+    font-weight: bold;
+}
+
+.contact-card .form-control{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.contact-card .form-control:focus{
+    border-color: #b5220f;
+    box-shadow: none;
+}
+
+.contact-btn{
+    background-color: #b5220f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover{
+    background-color: #8f1b0c;
+}
+
+.reset-btn{
+    background-color: #b5220f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact-map{
+    border-radius: 12px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+    .contact-btn,
+    .reset-btn{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+
+/*=== PRODUCT DETAILS ===*/
+.product-detail-card{
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.product-img{
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    object-fit: cover;
+}
+
+.option-title{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.size-box{
+    width: 55px;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.size-box:hover{
+    background: black;
+    color: white;
+}
+
+input[type="radio"]:checked + .size-box{
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.color-select{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.color-item{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.color-item:hover{
+    transform: scale(1.1);
+}
+
+.color-select input:checked + .color-item{
+    border: 2px solid #222;
+    transform: scale(1.1);
+}
+
+.quantity-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.quantity-box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.qty-btn{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 25px;
+}
+
+.active-qty{
+    background: #212529;
+    color: white;
+    border: none;
+}
+
+#quantity{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.stock-text{
+    color: gray;
+    font-size: 22px;
+}
+
+.size-guide{
+    color: black;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.action-btn{
+    height: 65px;
+    border-radius: 12px;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.gray-btn{
+    background: #f2f2f2;
+}
+
+.buy-btn{
+    background: linear-gradient(to right,#ff2f92,#ff3c6f);
+    color: white;
+}
+/*Sao và bình luận*/
+.rating{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 5px;
+}
+
+.rating label{
+    font-size: 35px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rating input:checked ~ label{
+    color: gold;
+}
+
+.rating label:hover,
+.rating label:hover ~ label{
+    color: gold;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:768px){
+
+    .option-title{
+        font-size: 22px;
+    }
+
+    .action-btn{
+        font-size: 18px;
+    }
+
+}
