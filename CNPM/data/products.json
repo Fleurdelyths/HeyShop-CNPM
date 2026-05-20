@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Áo thun HeyShop",
+    "price": 199000,
+    "description": "Áo cotton mềm mịn, mặc thoải mái.",
+    "category": "Thời trang"
+  },
+  {
+    "id": 2,
+    "name": "Giày thể thao",
+    "price": 499000,
+    "description": "Giày chạy bộ nhẹ, đế êm.",
+    "category": "Giày dép"
+  },
+  {
+    "id": 3,
+    "name": "Balo du lịch",
+    "price": 329000,
+    "description": "Balo chống nước, nhiều ngăn.",
+    "category": "Phụ kiện"
+  },
+  {
+    "id": 4,
+    "name": "Mũ lưỡi trai",
+    "price": 89000,
+    "description": "Mũ thời trang, che nắng tốt.",
+    "category": "Phụ kiện"
+  },
+  {
+    "id": 5,
+    "name": "Tai nghe Bluetooth",
+    "price": 259000,
+    "description": "Âm thanh rõ, kết nối không dây.",
+    "category": "Điện tử"
+  }
+]
