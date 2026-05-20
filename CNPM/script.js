@@ -1,23 +1,234 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const addButtons = document.querySelectorAll(".add-to-cart");
-  const cartBadge = document.querySelector(".cart-badge");
-  let count = 0;
+  const STORAGE_KEY = "heyshopCart";
 
-  addButtons.forEach((btn) => {
+  const getCartItems = () => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]") || [];
+    } catch {
+      return [];
+    }
+  };
+
+  const saveCartItems = (items) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  };
+
+  const formatCurrency = (value) => {
+    const number = Number(value) || 0;
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
+  };
+
+  const parseCurrency = (text) => {
+    return Number(String(text).replace(/[^0-9]/g, "")) || 0;
+  };
+
+  const updateCartBadge = () => {
+    const cartBadge = document.querySelector(".cart-badge");
+    if (!cartBadge) return;
+    const items = getCartItems();
+    const count = items.reduce((sum, item) => sum + Number(item.quantity || 1), 0);
+    cartBadge.innerText = count;
+  };
+
+  updateCartBadge();
+
+  const getProductCardData = (btn) => {
+    const card = btn.closest(".product-card");
+    if (!card) return null;
+
+    const nameEl = card.querySelector(".card-title");
+    const priceEl = card.querySelector(".text-danger.fs-5, .text-danger");
+    const imageEl = card.querySelector("img");
+    const sizeInput = card.querySelector("input[type='radio'][name^='size']:checked");
+    const colorInput = card.querySelector("input[type='radio'][name='color']:checked");
+
+    const sizeLabel = sizeInput ? card.querySelector(`label[for='${sizeInput.id}']`) : null;
+    const colorLabel = colorInput ? card.querySelector(`label[for='${colorInput.id}']`) : null;
+
+    return {
+      name: nameEl?.textContent.trim() || "Sản phẩm",
+      price: parseCurrency(priceEl?.textContent || "0"),
+      image: imageEl?.src || "",
+      link: window.location.pathname.split("/").pop(),
+      size: sizeLabel?.textContent.trim() || sizeInput?.value || "",
+      color: colorLabel?.style.background || colorLabel?.textContent.trim() || colorInput?.value || "",
+      quantity: 1,
+    };
+  };
+
+  const addCartItem = (product) => {
+    if (!product || !product.name) return;
+    const items = getCartItems();
+    const existingIndex = items.findIndex(
+      (item) =>
+        item.name === product.name &&
+        item.size === product.size &&
+        item.color === product.color,
+    );
+
+    if (existingIndex >= 0) {
+      items[existingIndex].quantity = Number(items[existingIndex].quantity || 1) + Number(product.quantity || 1);
+    } else {
+      items.push(product);
+    }
+
+    saveCartItems(items);
+    updateCartBadge();
+  };
+
+  const updateButtonState = (btn) => {
+    const originalText = btn.dataset.originalText || btn.innerText;
+    btn.dataset.originalText = originalText;
+    btn.innerText = "Đã thêm";
+    btn.classList.add("btn-success");
+    btn.classList.remove("btn-primary");
+
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.classList.remove("btn-success");
+      if (btn.dataset.originalText.toLowerCase().includes("giỏ")) {
+        btn.classList.add("btn-primary");
+      }
+    }, 1000);
+  };
+
+  const addToCartButtons = Array.from(document.querySelectorAll(".add-to-cart, button")).filter((btn) => {
+    const text = btn.textContent.trim().toLowerCase();
+    return btn.classList.contains("add-to-cart") || text === "thêm vào giỏ" || text === "thêm vào giỏ";
+  });
+
+  addToCartButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      count++;
-      cartBadge.innerText = count;
-
-      // Hiệu ứng nhấn nút
-      btn.innerText = "Đã thêm";
-      btn.classList.replace("btn-primary", "btn-success");
-
-      setTimeout(() => {
-        btn.innerText = "Giỏ hàng";
-        btn.classList.replace("btn-success", "btn-primary");
-      }, 1000);
+      const item = getProductCardData(btn);
+      if (!item) return;
+      addCartItem(item);
+      updateButtonState(btn);
     });
   });
+
+  const cartTable = document.getElementById("cart");
+
+  const getShippingFee = () => {
+    const area = document.getElementById("area")?.value;
+    const speed = document.getElementById("speed")?.value;
+    let ship = 0;
+
+    if (area === "near") ship += 15000;
+    else if (area === "far") ship += 25000;
+    else ship += 10000;
+
+    if (speed === "fast") ship += 10000;
+
+    return ship;
+  };
+
+  const renderCart = () => {
+    if (!cartTable) return;
+    const items = getCartItems();
+
+    if (items.length === 0) {
+      cartTable.innerHTML = `
+        <tr>
+          <td colspan="7" class="text-center py-4">Giỏ hàng đang trống.</td>
+        </tr>
+      `;
+    } else {
+      cartTable.innerHTML = items
+        .map(
+          (item, index) => `
+            <tr data-index="${index}">
+              <td>
+                <input type="checkbox" class="form-check-input">
+              </td>
+              <td>
+                <img src="${item.image}" width="80" class="rounded" />
+              </td>
+              <td class="text-start">
+                <div class="fw-bold">${item.name}</div>
+                ${item.size ? `<div>Size: ${item.size}</div>` : ""}
+                ${item.color ? `<div>Màu: ${item.color}</div>` : ""}
+              </td>
+              <td>${formatCurrency(item.price)}</td>
+              <td>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                  <button class="btn btn-outline-dark btn-sm qty-decrease" data-index="${index}">-</button>
+                  <span class="qty-value">${item.quantity}</span>
+                  <button class="btn btn-outline-dark btn-sm qty-increase" data-index="${index}">+</button>
+                </div>
+              </td>
+              <td>${formatCurrency(item.price * item.quantity)}</td>
+              <td>
+                <button class="btn btn-danger btn-sm remove-item" data-index="${index}">X</button>
+              </td>
+            </tr>
+          `,
+        )
+        .join("");
+    }
+
+    document.querySelectorAll(".qty-decrease").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const index = Number(btn.dataset.index);
+        const items = getCartItems();
+        if (!items[index]) return;
+        if (items[index].quantity > 1) {
+          items[index].quantity -= 1;
+        }
+        saveCartItems(items);
+        renderCart();
+        updateCartBadge();
+      });
+    });
+
+    document.querySelectorAll(".qty-increase").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const index = Number(btn.dataset.index);
+        const items = getCartItems();
+        if (!items[index]) return;
+        items[index].quantity += 1;
+        saveCartItems(items);
+        renderCart();
+        updateCartBadge();
+      });
+    });
+
+    document.querySelectorAll(".remove-item").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const index = Number(btn.dataset.index);
+        const items = getCartItems();
+        items.splice(index, 1);
+        saveCartItems(items);
+        renderCart();
+        updateCartBadge();
+      });
+    });
+
+    const subtotalValue = getCartItems().reduce(
+      (sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1),
+      0,
+    );
+
+    const shipValue = getShippingFee();
+    const totalValue = subtotalValue + shipValue;
+
+    document.getElementById("subtotal").innerText = formatCurrency(subtotalValue);
+    document.getElementById("ship").innerText = formatCurrency(shipValue);
+    document.getElementById("total").innerText = formatCurrency(totalValue);
+  };
+
+  window.renderCart = renderCart;
+  window.goCheckout = () => {
+    const items = getCartItems();
+    if (!items.length) {
+      alert("Giỏ hàng trống. Vui lòng chọn sản phẩm trước khi thanh toán.");
+      return;
+    }
+    alert("Tiếp tục đến thanh toán...");
+  };
+
+  if (cartTable) {
+    renderCart();
+  }
 
   const searchGroup = document.querySelector(".search-container");
   if (searchGroup) {

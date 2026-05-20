@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body class="bg-light">
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
-    >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
       <div class="container">
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger fw-bold" href="product.html">Sản phẩm</a>
+            <a class="nav-link active" href="product.html">Sản phẩm</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dịch vụ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Liên hệ</a>
+          </li>
         </ul>
         <a class="navbar-brand mx-auto" href="index.html">
-          <img src="image/logo1.png" alt="Logo" style="height: 60px" />
+          <img src="image/logo1.png" alt="Logo" style="height: 40px" />
         </a>
         <div class="d-flex align-items-center gap-3">
           <div class="search-container position-relative">
@@ -39,10 +41,16 @@
             </div>
             <div class="search-dropdown d-none" id="searchDropdown"></div>
           </div>
-          <img src="icon/person-circle.svg" width="24" height="24" alt="User" />
-          <div class="position-relative">
-            <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
-            <span class="cart-badge">0</span>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html">
+              <img src="icon/person-circle.svg" width="24" height="24" alt="User" />
+            </a>
+            <div class="position-relative">
+              <a href="cart.html">
+                <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
+              </a>
+              <span class="cart-badge">0</span>
+            </div>
           </div>
         </div>
       </div>
