@@ -8,29 +8,49 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body class="bg-light">
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
-    >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
       <div class="container">
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger fw-bold" href="product.html">Sản phẩm</a>
+            <a class="nav-link active" href="product.html">Sản phẩm</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Danh mục</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dịch vụ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Liên hệ</a>
+          </li>
         </ul>
         <a class="navbar-brand mx-auto" href="index.html">
-          <img src="image/logo1.png" alt="Logo" style="height: 60px" />
+          <img src="image/logo1.png" alt="Logo" style="height: 40px" />
         </a>
         <div class="d-flex align-items-center gap-3">
-          <img src="icon/person-circle.svg" width="24" height="24" alt="User" />
-          <div class="position-relative">
-            <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
-            <span class="cart-badge">0</span>
+          <div class="search-container position-relative">
+            <div class="input-group d-none d-md-flex" style="width: 150px">
+              <input
+                type="text"
+                class="form-control form-control-sm bg-light"
+                placeholder="Tìm kiếm..."
+              />
+              <span class="input-group-text bg-light">
+                <img src="icon/search.svg" width="16" height="16" />
+              </span>
+            </div>
+            <div class="search-dropdown d-none" id="searchDropdown"></div>
+          </div>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html">
+              <img src="icon/person-circle.svg" width="24" height="24" alt="User" />
+            </a>
+            <div class="position-relative">
+              <a href="cart.html">
+                <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
+              </a>
+              <span class="cart-badge">0</span>
+            </div>
           </div>
         </div>
       </div>
@@ -42,20 +62,126 @@
         <p class="text-muted">Khám phá bộ sưu tập mới nhất từ Hey Shop</p>
       </div>
     </header>
-
-    <main class="container pb-5">
+    <!-- Main Content: Bộ lọc & Sản phẩm -->
+    <main class="container my-4">
       <div class="row g-4">
-        <!--sp1- muốn thêm sản phẩm thì cứ copy khổi div này xong clone ra ra được nhé -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img src="image/com.jpg" class="card-img-top" alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="./product1.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+        <!-- Cột bên trái: Bộ lọc (Sidebar Filter) -->
+        <aside class="col-lg-3">
+          <div
+            class="border rounded p-3 bg-white sticky-top"
+            style="top: 90px; z-index: 1"
+          >
+            <h5 class="fw-bold mb-3 border-bottom pb-2">BỘ LỌC TÌM KIẾM</h5>
+
+            <!-- Nhóm lọc 1: Danh mục con -->
+            <div class="mb-4">
+              <h6 class="fw-bold text-secondary">Nhóm sản phẩm</h6>
+              <div class="form-check my-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="cat1"
+                  checked
+                />
+                <label class="form-check-input-label small" for="cat1"
+                  >Set Blazer / Vest</label
+                >
+              </div>
+              <div class="form-check my-2">
+                <input class="form-check-input" type="checkbox" id="cat2" />
+                <label class="form-check-input-label small" for="cat2"
+                  >Set Sơ mi & Short</label
+                >
+              </div>
+              <div class="form-check my-2">
+                <input class="form-check-input" type="checkbox" id="cat3" />
+                <label class="form-check-input-label small" for="cat3"
+                  >Streetwear / Unisex</label
+                >
               </div>
             </div>
+
+            <!-- Nhóm lọc 2: Khoảng giá -->
+            <div class="mb-4">
+              <h6 class="fw-bold text-secondary">Khoảng giá</h6>
+              <div class="form-check my-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterPrice"
+                  id="price1"
+                  checked
+                />
+                <label class="form-check-input-label small" for="price1"
+                  >Tất cả giá</label
+                >
+              </div>
+              <div class="form-check my-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterPrice"
+                  id="price2"
+                />
+                <label class="form-check-input-label small" for="price2"
+                  >Dưới 300.000đ</label
+                >
+              </div>
+              <div class="form-check my-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterPrice"
+                  id="price3"
+                />
+                <label class="form-check-input-label small" for="price3"
+                  >300.000đ - 600.000đ</label
+                >
+              </div>
+              <div class="form-check my-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="filterPrice"
+                  id="price4"
+                />
+                <label class="form-check-input-label small" for="price4"
+                  >Trên 600.000đ</label
+                >
+              </div>
+            </div>
+
+            <!-- Nhóm lọc 3: Kích thước -->
+            <div class="mb-3">
+              <h6 class="fw-bold text-secondary">Kích cỡ (Size)</h6>
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <button class="btn btn-outline-secondary btn-sm px-3">S</button>
+                <button class="btn btn-outline-secondary btn-sm px-3">M</button>
+                <button class="btn btn-outline-secondary btn-sm px-3">L</button>
+                <button class="btn btn-outline-secondary btn-sm px-3">
+                  XL
+                </button>
+              </div>
+            </div>
+
+            <button class="btn btn-danger btn-sm w-100 mt-3 fw-bold">
+              Áp dụng bộ lọc
+            </button>
+          </div>
+        </aside>
+        <div class="col-lg-9">
+          <div class="row g-4">
+            <!--sp1- muốn thêm sản phẩm thì cứ copy khổi div này xong clone ra ra được nhé -->
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img src="image/com.jpg" class="card-img-top" alt="Sản phẩm" />
+                  <div class="product-overlay">
+                    <a href="./product1.html">
+                      <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
+                    </a>
+                  </div>
+                </div>
             <div class="card-body text-center">
               <h5 class="card-title fw-bold">Blazer Thanh Lịch</h5>
               <p class="text-muted small">Phong cách Business casual</p>
@@ -417,6 +543,7 @@
                 THÊM VÀO GIỎ
               </button>
             </div>
+          </div>
           </div>
         </div>
       </div>

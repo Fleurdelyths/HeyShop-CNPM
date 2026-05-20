@@ -1,153 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
-
-</head>
-<body>
+  </head>
+  <body>
     <!-- header -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
-    >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
       <div class="container">
-        <!-- menu -->
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item">
-            <a class="nav-link text-danger fw-bold" href="#">Trang chủ</a>
+            <a class="nav-link" href="index.html">Trang chủ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="product.html">Sản phẩm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Danh mục</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Dịch vụ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Liên hệ</a>
+            <a class="nav-link active" href="contact.html">Liên hệ</a>
           </li>
         </ul>
-        <a class="navbar-brand mx-auto" href="#">
+        <a class="navbar-brand mx-auto" href="index.html">
           <img src="image/logo1.png" alt="Logo" style="height: 40px" />
         </a>
         <div class="d-flex align-items-center gap-3">
-          <div class="input-group d-none d-md-flex" style="width: 150px">
-            <input
-              type="text"
-              class="form-control form-control-sm bg-light"
-              placeholder="Tìm kiếm..."
-            />
-            <span class="input-group-text bg-light">
-              <img src="icon/search.svg" width="16" height="16" />
-            </span>
+          <div class="search-container position-relative">
+            <div class="input-group d-none d-md-flex" style="width: 150px">
+              <input
+                type="text"
+                class="form-control form-control-sm bg-light"
+                placeholder="Tìm kiếm..."
+              />
+              <span class="input-group-text bg-light">
+                <img src="icon/search.svg" width="16" height="16" />
+              </span>
+            </div>
+            <div class="search-dropdown d-none" id="searchDropdown"></div>
           </div>
           <div class="d-flex gap-3 align-items-center">
             <a href="login.html">
-              <img
-              src="icon/person-circle.svg"
-              width="24"
-              height="24"
-              alt="User"
-            />
+              <img src="icon/person-circle.svg" width="24" height="24" alt="User" />
             </a>
-            
             <div class="position-relative">
-              <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
+              <a href="cart.html">
+                <img src="icon/cart3.svg" width="24" height="24" alt="Cart" />
+              </a>
               <span class="cart-badge">0</span>
             </div>
           </div>
         </div>
       </div>
     </nav>
-    
+
     <div class="container py-5">
       <h3 class="text-center fw-bold mb-3 text-danger">
-          Liên hệ - góp ý của khách hàng
+        Liên hệ - góp ý của khách hàng
       </h3>
       <p class="text-center fw-semibold text-danger mb-5">
-          Chúng tôi luôn sẵn sàng hỗ trợ và lắng nghe mọi ý kiến từ khách hàng
+        Chúng tôi luôn sẵn sàng hỗ trợ và lắng nghe mọi ý kiến từ khách hàng
       </p>
       <!-- THÔNG TIN NHÀ BÁN HÀNG -->
       <div class="card shadow-sm border-0 mb-5">
-          <div class="card-body p-4">
-              <h2 class="mb-4">
-                  📚 Thông tin nhà bán hàng
-              </h2>
-              <p>
-                  <b>Tên cửa hàng:</b>
-                  Hey Shop
-              </p>
-              <p>
-                  <b>Số điện thoại:</b>
-                  0123 456 789
-              </p>
-              <p>
-                  <b>Địa chỉ:</b>
-                  Thành phố Hồ Chí Minh
-              </p>
-              <p>
-                <b>Email:</b>
-                heyshop.vn@gmail.com
-              </p>
-              <p>
-                  <b>Giờ làm việc:</b>
-                  9h00 – 18h00 (Thứ 2 – Thứ 7)
-              </p>
-              <iframe
-              src="https://www.google.com/maps?q=Thành+phố+Hồ+Chí+Minh&output=embed" width="100%" height="350" style="border:0;" class="rounded">
-              </iframe>
-          </div>
+        <div class="card-body p-4">
+          <h2 class="mb-4">📚 Thông tin nhà bán hàng</h2>
+          <p>
+            <b>Tên cửa hàng:</b>
+            Hey Shop
+          </p>
+          <p>
+            <b>Số điện thoại:</b>
+            0123 456 789
+          </p>
+          <p>
+            <b>Địa chỉ:</b>
+            Thành phố Hồ Chí Minh
+          </p>
+          <p>
+            <b>Email:</b>
+            heyshop.vn@gmail.com
+          </p>
+          <p>
+            <b>Giờ làm việc:</b>
+            9h00 – 18h00 (Thứ 2 – Thứ 7)
+          </p>
+          <iframe
+            src="https://www.google.com/maps?q=Thành+phố+Hồ+Chí+Minh&output=embed"
+            width="100%"
+            height="350"
+            style="border: 0"
+            class="rounded"
+          >
+          </iframe>
+        </div>
       </div>
 
       <!-- FORM LIÊN HỆ -->
       <div class="card shadow-sm border-0">
         <div class="card-body p-4">
-            <h2 class="mb-4">📝 Liên hệ - Góp ý khách hàng</h2>
-              <form id="contactForm" onsubmit="return validateForm()">
-                  <div class="row mb-3">
-                      <label class="col-sm-3 col-form-label">
-                          Họ tên:
-                      </label>
-                      <div class="col-sm-9">
-                          <input type="text" id="hoten" class="form-control">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label class="col-sm-3 col-form-label">
-                          Số điện thoại:
-                      </label>
-                      <div class="col-sm-9">
-                          <input type="text" id="sdt" class="form-control">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label class="col-sm-3 col-form-label">
-                          Email:
-                      </label>
-                      <div class="col-sm-9">
-                          <input type="email" id="email" class="form-control">
-                      </div>
-                  </div>
-                  <div class="row mb-4">
-                      <label class="col-sm-3 col-form-label">
-                          Ý kiến đóng góp:
-                      </label>
-                      <div class="col-sm-9">
-                          <textarea rows="5" id="gopy" class="form-control"></textarea>
-                      </div>
-                </div>
-                  <div class="text-center">
-                      <input type="submit" value="Gửi" class="btn btn-danger px-4">
-                      <input type="reset" value="Xóa" class="btn btn-secondary px-4">
-                  </div>
-              </form>
-          </div>
+          <h2 class="mb-4">📝 Liên hệ - Góp ý khách hàng</h2>
+          <form id="contactForm" onsubmit="return validateForm();">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label"> Họ tên: </label>
+              <div class="col-sm-9">
+                <input type="text" id="hoten" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label"> Số điện thoại: </label>
+              <div class="col-sm-9">
+                <input type="text" id="sdt" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label"> Email: </label>
+              <div class="col-sm-9">
+                <input type="email" id="email" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label"> Ý kiến đóng góp: </label>
+              <div class="col-sm-9">
+                <textarea rows="5" id="gopy" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" value="Gửi" class="btn btn-danger px-4" />
+              <input type="reset" value="Xóa" class="btn btn-secondary px-4" />
+            </div>
+          </form>
+        </div>
       </div>
-  </div>
-</body>
+    </div>
+  </body>
 </html>
