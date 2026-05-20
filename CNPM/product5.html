@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sơ Mi Công Sở</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!-- header -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
@@ -44,7 +44,12 @@
           </div>
           <div class="d-flex gap-3 align-items-center">
             <a href="login.html">
-              <img src="icon/person-circle.svg" width="24" height="24"nalt="User"/>
+              <img
+                src="icon/person-circle.svg"
+                width="24"
+                height="24"
+                nalt="User"
+              />
             </a>
             <div class="position-relative">
               <a href="cart.html">
@@ -58,121 +63,119 @@
     </nav>
 
     <div class="container py-5">
-        <div class="card border-0 shadow-sm product-detail-card">
-            <div class="card-body p-4">
-                <div class="row align-items-center">
-                    <div class="col-md-5 text-center">
-                        <img src="image/somi.jpg" class="img-fluid rounded product-img">
-                    </div>
-                    <div class="col-md-7">
-                        <h2 class="fw-bold mb-3">Sơ Mi Công Sở</h2>
-                        <h3 class="text-danger fw-bold mb-4"> 500.000đ</h3>
-                        <div class="mb-4">
-                            <h4 class="option-title">
-                                Kích Cỡ
-                            </h4>
-                            <div class="mt-3">
-                                <input type="radio" name="size" id="s3" hidden checked>
-                                <label for="s3" class="size-box">S</label>
-                                <input type="radio"  name="size" id="m5"  hidden>
-                                <label for="m5" class="size-box">M</label>
-                                <input type="radio" name="size" id="l5" hidden>
-                                <label for="l5" class="size-box">L</label>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="option-title">
-                                Màu Sắc
-                            </h4>
-                            <div class="color-select mt-3">
-                                <input type="radio" name="color" id="cl13" hidden checked>
-                                <label for="cl13" class="color-item" style="background:#323131;"></label>
-                                <input type="radio"  name="color" id="cl14"  hidden>
-                                <label for="cl14" class="color-item" style="background:#fbfbfb;"></label>
-                                <input type="radio" name="color" id="cl15" hidden>
-                                <label for="cl15" class="color-item" style="background:#8b2313;"></label>
-                            </div>
-                        </div>
-                        <div class="mb-5">
-                            <h4 class="option-title">Số Lượng</h4>
-                            <div class="quantity-wrapper mt-3">
-                                <div class="quantity-box">
-                                    <button class="qty-btn" onclick="decreaseQty()">
-                                        -
-                                    </button>
-                                    <span id="quantity">
-                                        1
-                                    </span>
-                                    <button class="qty-btn active-qty" onclick="increaseQty()">
-                                        +
-                                    </button>
-                                </div>
-                                <span class="stock-text">
-                                    Kho: 3
-                                </span>
-                                <a href="./image/sizesomi.png" class="size-guide">
-                                    📏 Tư vấn kích cỡ
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <button class="action-btn gray-btn w-100">
-                                    💬 Liên hệ
-                                </button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="action-btn gray-btn w-100">
-                                    🛒 Thêm vào giỏ
-                                </button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="action-btn buy-btn w-100">
-                                    Mua Ngay
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+      <div class="card border-0 shadow-sm product-detail-card">
+        <div class="card-body p-4">
+          <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+              <img src="image/somi.jpg" class="img-fluid rounded product-img" />
+            </div>
+            <div class="col-md-7">
+              <h2 class="fw-bold mb-3">Sơ Mi Công Sở</h2>
+              <h3 class="text-danger fw-bold mb-4">500.000đ</h3>
+              <div class="mb-4">
+                <h4 class="option-title">Kích Cỡ</h4>
+                <div class="mt-3">
+                  <input type="radio" name="size" id="s3" hidden checked />
+                  <label for="s3" class="size-box">S</label>
+                  <input type="radio" name="size" id="m5" hidden />
+                  <label for="m5" class="size-box">M</label>
+                  <input type="radio" name="size" id="l5" hidden />
+                  <label for="l5" class="size-box">L</label>
                 </div>
+              </div>
+              <div class="mb-4">
+                <h4 class="option-title">Màu Sắc</h4>
+                <div class="color-select mt-3">
+                  <input type="radio" name="color" id="cl13" hidden checked />
+                  <label
+                    for="cl13"
+                    class="color-item"
+                    style="background: #323131"
+                  ></label>
+                  <input type="radio" name="color" id="cl14" hidden />
+                  <label
+                    for="cl14"
+                    class="color-item"
+                    style="background: #fbfbfb"
+                  ></label>
+                  <input type="radio" name="color" id="cl15" hidden />
+                  <label
+                    for="cl15"
+                    class="color-item"
+                    style="background: #8b2313"
+                  ></label>
+                </div>
+              </div>
+              <div class="mb-5">
+                <h4 class="option-title">Số Lượng</h4>
+                <div class="quantity-wrapper mt-3">
+                  <div class="quantity-box">
+                    <button class="qty-btn" onclick="decreaseQty()">-</button>
+                    <span id="quantity"> 1 </span>
+                    <button class="qty-btn active-qty" onclick="increaseQty()">
+                      +
+                    </button>
+                  </div>
+                  <span class="stock-text"> Kho: 3 </span>
+                  <a href="./image/sizesomi.png" class="size-guide">
+                    📏 Tư vấn kích cỡ
+                  </a>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <button class="action-btn gray-btn w-100">💬 Liên hệ</button>
+                </div>
+                <div class="col-md-4">
+                  <button class="action-btn gray-btn w-100">
+                    🛒 Thêm vào giỏ
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button class="action-btn buy-btn w-100">Mua Ngay</button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <form class="mt-4">
-            <div class="rating mb-3">
-                <input type="radio" name="star" id="star5" hidden>
-                <label for="star5">★</label>
-                <input type="radio" name="star" id="star4" hidden>
-                <label for="star4">★</label>
-                <input type="radio" name="star" id="star3" hidden>
-                <label for="star3">★</label>
-                <input type="radio" name="star" id="star2" hidden>
-                <label for="star2">★</label>
-                <input type="radio" name="star" id="star1" hidden>
-                <label for="star1">★</label>
-            </div>
-            <textarea class="form-control" rows="4" placeholder="Nhập bình luận của bạn..."></textarea>
-            <button type="submit" class="btn btn-dark px-4 py-2 mt-3">
-                Gửi bình luận
-            </button>
-        </form>
-        <div class="card border-0 shadow-sm product-detail-card mt-4">
-            <div class="card-body p-4">
-                <h3 class="fw-bold mb-4">
-                    📖 Mô Tả Sản Phẩm
-                </h3>
-                <p>
-                    Áo sơ mi trơn tối giản phù hợp văn phòng.
-                </p>
-                <p>
-                    <strong>Kích cỡ:</strong> S, M, L <br>
-                    <strong>Chất liệu:</strong> Cotton cao cấp. <br>
-                    <strong>Phong cách:</strong> Business formal. <br>
-                    <strong>Họa tiết:</strong> Trơn. <br>
-                    <strong>Cổ áo:</strong> Bẻ đứng <br>
-                    <strong>Mùa:</strong> Bốn mùa. <br>
-                    <strong>Giới tính:</strong> Nam.
-                </p>
-            </div>
+      </div>
+      <form class="mt-4">
+        <div class="rating mb-3">
+          <input type="radio" name="star" id="star5" hidden />
+          <label for="star5">★</label>
+          <input type="radio" name="star" id="star4" hidden />
+          <label for="star4">★</label>
+          <input type="radio" name="star" id="star3" hidden />
+          <label for="star3">★</label>
+          <input type="radio" name="star" id="star2" hidden />
+          <label for="star2">★</label>
+          <input type="radio" name="star" id="star1" hidden />
+          <label for="star1">★</label>
         </div>
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Nhập bình luận của bạn..."
+        ></textarea>
+        <button type="submit" class="btn btn-dark px-4 py-2 mt-3">
+          Gửi bình luận
+        </button>
+      </form>
+      <div class="card border-0 shadow-sm product-detail-card mt-4">
+        <div class="card-body p-4">
+          <h3 class="fw-bold mb-4">📖 Mô Tả Sản Phẩm</h3>
+          <p>Áo sơ mi trơn tối giản phù hợp văn phòng.</p>
+          <p>
+            <strong>Kích cỡ:</strong> S, M, L <br />
+            <strong>Chất liệu:</strong> Cotton cao cấp. <br />
+            <strong>Phong cách:</strong> Business formal. <br />
+            <strong>Họa tiết:</strong> Trơn. <br />
+            <strong>Cổ áo:</strong> Bẻ đứng <br />
+            <strong>Mùa:</strong> Bốn mùa. <br />
+            <strong>Giới tính:</strong> Nam.
+          </p>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
