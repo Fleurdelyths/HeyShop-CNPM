@@ -10,7 +10,7 @@ body {
 .banner-section {
   width: 100%;
   height: 450px;
-  background-image: url("../image/image2.png"); /* Đảm bảo file có đuôi .jpg hoặc .png nếu có */
+  background-image: url("../assets/images/image2.png"); /* Đảm bảo file có đuôi .jpg hoặc .png nếu có */
   background-size: cover; /* Quan trọng: Để ảnh phủ kín khung hình chữ nhật */
   background-position: center; /* Quan trọng: Để ảnh luôn nằm giữa */
   background-repeat: no-repeat;

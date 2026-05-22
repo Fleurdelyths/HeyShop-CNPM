@@ -52,6 +52,8 @@ app.use(express.urlencoded({ extended: true }));
 // chặn truy cập trực tiếp vào thư mục data
 app.use('/data', (req, res) => res.status(404).end());
 app.use(express.static(__dirname));
+// Serve HTML pages placed under the pages/ directory as static files
+app.use(express.static(path.join(__dirname, 'pages')));
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'HeyShop Backend' });
@@ -141,7 +143,7 @@ app.post('/api/cart', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'pages', 'index.html'));
 });
 
 ensureDataFiles()
