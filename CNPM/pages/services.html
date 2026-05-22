@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hey Shop - Dịch vụ</title>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/services.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
+    >
+      <div class="container">
+        <ul class="navbar-nav d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Sản phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold text-danger" href="dichvu.html"
+              >Dịch vụ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Liên hệ</a>
+          </li>
+        </ul>
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img
+            src="../assets/images/logo1.png"
+            alt="Logo"
+            style="height: 40px"
+          />
+        </a>
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-container position-relative">
+            <div class="input-group d-none d-md-flex" style="width: 150px">
+              <input
+                type="text"
+                class="form-control form-control-sm bg-light"
+                placeholder="Tìm kiếm..."
+              />
+              <span class="input-group-text bg-light">
+                <img src="../assets/icons/search.svg" width="16" height="16" />
+              </span>
+            </div>
+            <div class="search-dropdown d-none" id="searchDropdown"></div>
+          </div>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html">
+              <img
+                src="../assets/icons/person-circle.svg"
+                width="24"
+                height="24"
+                alt="User"
+              />
+            </a>
+            <div class="position-relative">
+              <a href="cart.html">
+                <img
+                  src="../assets/icons/cart3.svg"
+                  width="24"
+                  height="24"
+                  alt="Cart"
+                />
+              </a>
+              <span class="cart-badge">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="banner-section">
+      <div class="banner-bg"></div>
+      <div class="banner-overlay"></div>
+      <div class="container h-100 position-relative" style="z-index: 3">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-7">
+            <div class="banner-text-content">
+              <h1 class="display-2 fw-bold mb-0 text-white">BỘ SƯU TẬP</h1>
+              <h2 class="display-5 fw-semibold text-light opacity-75">
+                GIẢM GIÁ 25%
+              </h2>
+              <div class="decor-box d-none d-md-block">
+                <span class="decor-x text-white-50">✕</span>
+                <div class="decor-dots-white"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="container my-5">
+      <div class="section-divider text-center mb-5">
+        <span
+          class="d-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase"
+        >
+          <img src="../assets/icons/fire.svg" width="20" height="20" />
+          Dịch Vụ Nổi Bật Hey Shop
+          <img src="../assets/icons/fire.svg" width="20" height="20" />
+        </span>
+      </div>
+
+      <section class="mb-5">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white border rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">🚚</div>
+              <h5 class="fw-bold mb-2">Giao hàng nhanh</h5>
+              <p class="text-muted small px-2">
+                Hỗ trợ giao hàng toàn quốc nhanh chóng và bảo đảm an toàn cho
+                sản phẩm.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white border rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">💳</div>
+              <h5 class="fw-bold mb-2">Thanh toán đa dạng</h5>
+              <p class="text-muted small px-2">
+                Thanh toán linh hoạt khi nhận hàng hoặc qua ví điện tử, ngân
+                hàng, quét mã QR Code.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white border rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">🎁</div>
+              <h5 class="fw-bold mb-2">Gói quà miễn phí</h5>
+              <p class="text-muted small px-2">
+                Hỗ trợ đóng gói quà tặng chỉn chu, đẹp mắt dành tặng cho bạn bè
+                và người thân.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white border rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">👕</div>
+              <h5 class="fw-bold mb-2">Mẫu mới mỗi tuần</h5>
+              <p class="text-muted small px-2">
+                Liên tục cập nhật nhiều mẫu mã thời trang, bộ sưu tập mới bắt
+                kịp xu hướng.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white border rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">⭐</div>
+              <h5 class="fw-bold mb-2">Khách hàng VIP</h5>
+              <p class="text-muted small px-2">
+                Nhận nhiều ưu đãi giảm giá sâu và các phần quà đặc quyền dành
+                riêng cho thành viên VIP.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="service-card text-center p-4 bg-white rounded shadow-sm h-100"
+            >
+              <div class="service-icon mb-3">☎️</div>
+              <h5 class="fw-bold mb-2">Hỗ trợ 24/7</h5>
+              <p class="text-muted small px-2">
+                Đội ngũ chuyên viên tư vấn nhiệt tình, sẵn sàng hỗ trợ khách
+                hàng giải đáp thắc mắc.
+              </p>
+              <button
+                class="btn btn-dark btn-sm rounded-pill px-4 mt-auto w-50 mx-auto"
+              >
+                Xem thêm
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5 pt-4">
+        <div class="section-divider text-center mb-5">
+          <span
+            class="d-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase"
+          >
+            <img src="../assets/icons/fire.svg" width="20" height="20" />
+            Bảng Giá Gói Dịch Vụ
+            <img src="icon/fire.svg" width="20" height="20" />
+          </span>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div
+              class="pricing-card border rounded bg-white shadow-sm overflow-hidden h-100 text-center"
+            >
+              <div class="pricing-header bg-secondary text-white p-3">
+                <h5 class="fw-bold mb-0">🌱 Gói Tiết Kiệm</h5>
+              </div>
+              <div class="p-4">
+                <h3 class="fw-bold text-dark mb-3">100.000đ</h3>
+                <ul
+                  class="list-unstyled text-muted small text-start mx-auto mb-4"
+                  style="max-width: 220px"
+                >
+                  <li class="mb-2">✓ Giao hàng tiêu chuẩn toàn quốc</li>
+                  <li class="mb-2">✓ Đổi trả linh hoạt trong 7 ngày</li>
+                  <li class="mb-2">✓ Ưu đãi thành viên cơ bản</li>
+                </ul>
+                <button class="btn btn-outline-secondary w-100 rounded-pill">
+                  Chọn dịch vụ
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="pricing-card border rounded bg-white shadow-sm overflow-hidden h-100 text-center"
+            >
+              <div
+                class="pricing-header text-white p-3"
+                style="background-color: #d1923d"
+              >
+                <h5 class="fw-bold mb-0">🔥 Gói Nâng Cao</h5>
+              </div>
+              <div class="p-4">
+                <h3 class="fw-bold text-dark mb-3">200.000đ</h3>
+                <ul
+                  class="list-unstyled text-muted small text-start mx-auto mb-4"
+                  style="max-width: 220px"
+                >
+                  <li class="mb-2">✓ Giao hàng nhanh hỏa tốc</li>
+                  <li class="mb-2">✓ Tặng kèm hộp quà bọc cao cấp</li>
+                  <li class="mb-2">✓ Hỗ trợ đổi trả sản phẩm tận nhà</li>
+                </ul>
+                <button
+                  class="btn text-white fw-bold w-100 rounded-pill"
+                  style="background-color: #d1923d; border: none"
+                >
+                  Chọn dịch vụ
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="pricing-card border rounded bg-white shadow-sm overflow-hidden h-100 text-center"
+            >
+              <div
+                class="pricing-header text-white p-3"
+                style="background-color: #5c6bc0"
+              >
+                <h5 class="fw-bold mb-0">👑 Gói VIP</h5>
+              </div>
+              <div class="p-4">
+                <h3 class="fw-bold text-dark mb-3">400.000đ</h3>
+                <ul
+                  class="list-unstyled text-muted small text-start mx-auto mb-4"
+                  style="max-width: 220px"
+                >
+                  <li class="mb-2">✓ Giao hàng miễn phí trọn đời</li>
+                  <li class="mb-2">✓ Stylist riêng tư vấn phối đồ</li>
+                  <li class="mb-2">✓ Giảm 10% tổng hóa đơn mua sắm</li>
+                </ul>
+                <button
+                  class="btn text-white fw-bold w-100 rounded-pill"
+                  style="background-color: #5c6bc0; border: none"
+                >
+                  Chọn dịch vụ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5 pt-4">
+        <div class="section-divider text-center mb-5">
+          <span
+            class="d-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase"
+          >
+            <img src="../assets/icons/fire.svg" width="20" height="20" />
+            Quy Trình Mua Hàng Siêu Tốc
+            <img src="../assets/icons/fire.svg" width="20" height="20" />
+          </span>
+        </div>
+        <div class="row g-4 text-center">
+          <div class="col-6 col-md-3">
+            <div class="step-item d-flex flex-column align-items-center">
+              <div class="step-number mb-3">1</div>
+              <h6 class="fw-bold mb-2">Chọn quần áo</h6>
+              <p class="text-muted small px-2">
+                Tìm kiếm, tham khảo kích cỡ và lựa chọn trang phục vừa vặn.
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="step-item d-flex flex-column align-items-center">
+              <div class="step-number mb-3">2</div>
+              <h6 class="fw-bold mb-2">Thêm giỏ hàng</h6>
+              <p class="text-muted small px-2">
+                Xác nhận chuẩn số lượng, màu sắc và kích thước phân loại sản
+                phẩm.
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="step-item d-flex flex-column align-items-center">
+              <div class="step-number mb-3">3</div>
+              <h6 class="fw-bold mb-2">Thanh toán</h6>
+              <p class="text-muted small px-2">
+                Điền chính xác thông tin nhận hàng và phương thức giao dịch.
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="step-item d-flex flex-column align-items-center">
+              <div class="step-number mb-3">4</div>
+              <h6 class="fw-bold mb-2">Nhận hàng</h6>
+              <p class="text-muted small px-2">
+                Đơn hàng được vận chuyển tận nơi, kiểm tra chất lượng trước khi
+                ký nhận.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5 pt-4">
+        <div class="section-divider text-center mb-5">
+          <span
+            class="d-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase"
+          >
+            <img src="../assets/icons/fire.svg" width="20" height="20" />
+            Hệ Thống Tích Điểm Thành Viên
+            <img src="../assets/icons/fire.svg" width="20" height="20" />
+          </span>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div
+              class="member-card border rounded bg-white shadow-sm p-4 text-center h-100"
+            >
+              <div class="member-badge bronze-badge mx-auto mb-3">
+                <span>Đồng</span>
+              </div>
+              <h5 class="fw-bold mb-2">Thành viên Đồng</h5>
+              <p class="text-muted small mb-4">
+                Áp dụng khi tạo tài khoản thành công hoặc tích lũy dưới
+                2.000.000đ.
+              </p>
+              <ul
+                class="list-unstyled text-start small mx-auto border-top pt-3"
+                style="max-width: 240px"
+              >
+                <li class="mb-2">
+                  🎁 Tặng voucher 50.000đ vào tuần sinh nhật.
+                </li>
+                <li class="mb-2">
+                  🪙 Tích lũy 1% giá trị hóa đơn quy thành điểm thưởng.
+                </li>
+                <li class="mb-2">
+                  🆕 Nhận thông tin sớm nhất về các chương trình ưu đãi, xả kho.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="member-card border rounded bg-white shadow-sm p-4 text-center h-100"
+            >
+              <div class="member-badge silver-badge mx-auto mb-3">
+                <span>Bạc</span>
+              </div>
+              <h5 class="fw-bold mb-2">Thành viên Bạc</h5>
+              <p class="text-muted small mb-4">
+                Áp dụng khi tổng hóa đơn tích lũy đạt từ 2.000.000đ đến dưới
+                5.000.000đ.
+              </p>
+              <ul
+                class="list-unstyled text-start small mx-auto border-top pt-3"
+                style="max-width: 240px"
+              >
+                <li class="mb-2">
+                  🔥 Chiết khấu trực tiếp 3% trên mọi hóa đơn mua sắm.
+                </li>
+                <li class="mb-2">
+                  🎁 Tặng voucher 100.000đ tri ân ngày sinh nhật.
+                </li>
+                <li class="mb-2">
+                  🪙 Tích lũy gấp đôi (2%) điểm thưởng khi thanh toán.
+                </li>
+                <li class="mb-2">
+                  🚚 Freeship toàn quốc cho các hóa đơn có trị giá từ 300.000đ.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="member-card border-gold rounded bg-white shadow-sm p-4 text-center h-100 position-relative overflow-hidden"
+            >
+              <span
+                class="badge bg-warning text-dark position-absolute top-0 end-0 rounded-0 px-3 py-1 fw-bold small"
+                style="border-bottom-left-radius: 12px !important"
+                >ĐẶC QUYỀN</span
+              >
+              <div class="member-badge gold-badge mx-auto mb-3">
+                <span>Vàng</span>
+              </div>
+              <h5 class="fw-bold mb-2 text-gold">Thành viên Vàng</h5>
+              <p class="text-muted small mb-4">
+                Hạng thẻ cao cấp nhất khi tổng giá trị tích lũy đạt từ
+                5.000.000đ trở lên.
+              </p>
+              <ul
+                class="list-unstyled text-start small mx-auto border-top pt-3"
+                style="max-width: 240px"
+              >
+                <li class="mb-2">
+                  👑 Giảm thẳng trực tiếp 5% cho toàn bộ các đơn hàng.
+                </li>
+                <li class="mb-2">
+                  🎁 Combo quà tặng cao cấp + Giftcode 200.000đ dịp sinh nhật.
+                </li>
+                <li class="mb-2">
+                  🪙 Tích lũy 3% điểm thưởng, ưu tiên đổi quà giới hạn.
+                </li>
+                <li class="mb-2">
+                  🚚 Miễn phí vận chuyển cho mọi đơn hàng không giới hạn giá
+                  trị.
+                </li>
+                <li class="mb-2">
+                  🔄 Thời gian hỗ trợ đổi trả linh hoạt kéo dài đến 15 ngày.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-5 border-top bg-white mt-auto">
+      <div class="container text-center">
+        <h5 class="fw-bold mb-3" style="letter-spacing: 1px">HEY SHOP</h5>
+        <div class="d-flex justify-content-center gap-4 mb-4 small fw-medium">
+          <a href="#" class="text-decoration-none text-secondary"
+            >Về chúng tôi</a
+          >
+          <a href="#" class="text-decoration-none text-secondary"
+            >Chính sách bảo mật</a
+          >
+          <a href="#" class="text-decoration-none text-secondary"
+            >Điều khoản dịch vụ</a
+          >
+          <a href="#" class="text-decoration-none text-secondary"
+            >Liên hệ hệ thống</a
+          >
+        </div>
+        <p class="small text-muted mb-0">
+          © 2026 Hey Shop Project. Thiết kế đồng bộ mã nguồn Front-end.
+        </p>
+      </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,123 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giỏ hàng</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/cart.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
     <h2 class="text-center fw-bold my-4">GIỎ HÀNG</h2>
     <div class="container">
-        <div class="row g-4">
-            <!-- LEFT -->
-            <div class="col-lg-8">
-                <div class="table-responsive shadow-sm p-3 bg-white rounded">
-                    <table class="table align-middle text-center">
-                        <thead class="table-light">
-                            <tr>
-                                <!-- CHỌN -->
-                                <th>Chọn</th>
-                                <th>Ảnh</th>
-                                <th>Tên</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Tổng</th>
-                                <th>Xóa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cart">
-                            <!-- SẢN PHẨM -->
-                            <tr>
-                                <td>
-                                    <input type="checkbox" class="form-check-input">
-                                </td>
-                                <td>
-                                    <img src="/assets/images/com.jpg" width="80" class="rounded">
-                                </td>
-                                <td>Blazer Thanh Lịch</td>
-                                <td>699.000đ</td>
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center gap-2">
-                                        <button class="btn btn-outline-dark btn-sm">-</button>
-                                        <span>1</span>
-                                        <button class="btn btn-outline-dark btn-sm">+</button>
-                                    </div>
-                                </td>
-                                <td>699.000đ</td>
-                                <!-- XÓA -->
-                                <td>
-                                    <button class="btn btn-danger btn-sm">X</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- RIGHT -->
-            <div class="col-lg-4">
-                <div class="shadow-sm p-4 bg-white rounded">
-                    <h4 class="fw-bold mb-4">
-                        Tổng đơn hàng
-                    </h4>
-                    <!-- KHU VỰC -->
-                    <div class="mb-3">
-                        <label class="form-label">Khu vực:</label>
-                        <select id="area" class="form-select" onchange="renderCart()">
-                            <option value="city">
-                                Nội thành
-                            </option>
-                            <option value="near">
-                                Tỉnh gần
-                            </option>
-                            <option value="far">
-                                Tỉnh xa
-                            </option>
-                        </select>
+      <div class="row g-4">
+        <!-- LEFT -->
+        <div class="col-lg-8">
+          <div class="table-responsive shadow-sm p-3 bg-white rounded">
+            <table class="table align-middle text-center">
+              <thead class="table-light">
+                <tr>
+                  <!-- CHỌN -->
+                  <th>Chọn</th>
+                  <th>Ảnh</th>
+                  <th>Tên</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Tổng</th>
+                  <th>Xóa</th>
+                </tr>
+              </thead>
+              <tbody id="cart">
+                <!-- SẢN PHẨM -->
+                <tr>
+                  <td>
+                    <input type="checkbox" class="form-check-input" />
+                  </td>
+                  <td>
+                    <img
+                      src="../assets/images/com.jpg"
+                      width="80"
+                      class="rounded"
+                    />
+                  </td>
+                  <td>Blazer Thanh Lịch</td>
+                  <td>699.000đ</td>
+                  <td>
+                    <div
+                      class="d-flex justify-content-center align-items-center gap-2"
+                    >
+                      <button class="btn btn-outline-dark btn-sm">-</button>
+                      <span>1</span>
+                      <button class="btn btn-outline-dark btn-sm">+</button>
                     </div>
-                    <!-- GIAO HÀNG -->
-                    <div class="mb-3">
-                        <label class="form-label">
-                         Giao hàng:
-                        </label>
-                        <select id="speed" class="form-select" onchange="renderCart()" >
-                            <option value="normal">
-                                Thường
-                            </option>
-                            <option value="fast">
-                                Nhanh
-                            </option>
-                        </select>
-                    </div>
-                    <hr>
-                    <p class="d-flex justify-content-between">
-                        <span>Tạm tính:</span>
-                        <span id="subtotal">
-                            0đ
-                        </span>
-                    </p>
-                    <p class="d-flex justify-content-between">
-                        <span>Ship:</span>
-                        <span id="ship">
-                            0đ
-                        </span>
-                    </p>
-                    <hr>
-                    <h4 class="d-flex justify-content-between fw-bold">
-                        <span>Tổng:</span>
-                        <span id="total">
-                            0đ
-                        </span>
-                    </h4>
-                    <button class="btn btn-dark w-100 mt-3" onclick="goCheckout()">
-                        Thanh toán
-                    </button>
-                </div>
-            </div>
+                  </td>
+                  <td>699.000đ</td>
+                  <!-- XÓA -->
+                  <td>
+                    <button class="btn btn-danger btn-sm">X</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
+        <!-- RIGHT -->
+        <div class="col-lg-4">
+          <div class="shadow-sm p-4 bg-white rounded">
+            <h4 class="fw-bold mb-4">Tổng đơn hàng</h4>
+            <!-- KHU VỰC -->
+            <div class="mb-3">
+              <label class="form-label">Khu vực:</label>
+              <select id="area" class="form-select" onchange="renderCart()">
+                <option value="city">Nội thành</option>
+                <option value="near">Tỉnh gần</option>
+                <option value="far">Tỉnh xa</option>
+              </select>
+            </div>
+            <!-- GIAO HÀNG -->
+            <div class="mb-3">
+              <label class="form-label"> Giao hàng: </label>
+              <select id="speed" class="form-select" onchange="renderCart()">
+                <option value="normal">Thường</option>
+                <option value="fast">Nhanh</option>
+              </select>
+            </div>
+            <hr />
+            <p class="d-flex justify-content-between">
+              <span>Tạm tính:</span>
+              <span id="subtotal"> 0đ </span>
+            </p>
+            <p class="d-flex justify-content-between">
+              <span>Ship:</span>
+              <span id="ship"> 0đ </span>
+            </p>
+            <hr />
+            <h4 class="d-flex justify-content-between fw-bold">
+              <span>Tổng:</span>
+              <span id="total"> 0đ </span>
+            </h4>
+            <button class="btn btn-dark w-100 mt-3" onclick="goCheckout()">
+              Thanh toán
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="/js/script.js"></script>
-</body>
+    <script src="../js/script.js"></script>
+  </body>
 </html>

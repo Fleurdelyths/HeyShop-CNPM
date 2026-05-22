@@ -1,0 +1,117 @@
+/* ==================== PHONG CÁCH RIÊNG CHO TRANG DỊCH VỤ ==================== */
+
+/* Tựa đề khoảng cách rộng và có dấu gạch ngang trang trí phía dưới */
+.tracking-wide {
+  letter-spacing: 1.5px;
+  color: #222;
+  position: relative;
+  padding-bottom: 12px;
+}
+.tracking-wide::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* 1. Thiết kế Thẻ Dịch Vụ Nổi Bật */
+.service-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eaeaea !important;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+.service-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+/* 2. Thiết kế Bảng Giá */
+.pricing-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid #eaeaea !important;
+}
+.pricing-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Thiết kế Vòng Tròn Quy Trình 4 Bước */
+.step-number {
+  width: 60px;
+  height: 60px;
+  background-color: #212529;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+.step-item {
+  cursor: pointer;
+}
+.step-item:hover .step-number {
+  background-color: #dc3545;
+  transform: rotate(360deg);
+}
+
+/* 4. Thiết kế Thẻ Thành Viên */
+.member-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid #eaeaea !important;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08) !important;
+}
+.member-badge {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  letter-spacing: 0.5px;
+}
+.bronze-badge {
+  background: linear-gradient(135deg, #a86c43, #633617);
+}
+.silver-badge {
+  background: linear-gradient(135deg, #cfd8dc, #78909c);
+}
+.gold-badge {
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+}
+.border-gold {
+  border: 2px solid #ffb300 !important;
+}
+.text-gold {
+  color: #b8860b;
+}
