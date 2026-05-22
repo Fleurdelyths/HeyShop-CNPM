@@ -3,12 +3,17 @@ const path = require('path');
 const fs = require('fs').promises;
 const crypto = require('crypto');
 
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const dataDir = path.join(__dirname, 'data');
 const usersFile = path.join(dataDir, 'users.json');
 const productsFile = path.join(dataDir, 'products.json');
 const cartsFile = path.join(dataDir, 'carts.json');
+
+const cartsFile = path.join(dataDir,'carts.json');
+app.use(express.static(path.join(__dirname)));
 
 const defaultProducts = [
   { id: 1, name: 'Áo thun HeyShop', price: 199000, description: 'Áo cotton mềm mịn, mặc thoải mái.', category: 'Thời trang' },
