@@ -35,6 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCartBadge();
 
+  const normalizeImagePath = (image) => {
+    if (!image) return "";
+
+    try {
+      const parsed = new URL(image, window.location.href);
+      if (parsed.pathname.startsWith("/assets/")) {
+        return `../${parsed.pathname.replace(/^\//, "")}`;
+      }
+    } catch {
+      // ignore malformed URLs and use the original string
+    }
+
+    return image;
+  };
+
   const getProductCardData = (btn) => {
     const card = btn.closest(".product-card");
     if (!card) return null;
@@ -59,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return {
       name: nameEl?.textContent.trim() || "Sản phẩm",
       price: parseCurrency(priceEl?.textContent || "0"),
-      image: imageEl?.src || "",
+      image: normalizeImagePath(imageEl?.getAttribute("src") || imageEl?.src || ""),
       link: window.location.pathname.split("/").pop(),
       size: sizeLabel?.textContent.trim() || sizeInput?.value || "",
       color:
@@ -164,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <input type="checkbox" class="form-check-input">
               </td>
               <td>
-                <img src="${item.image}" width="80" class="rounded" />
+                <img src="${normalizeImagePath(item.image)}" width="80" class="rounded" />
               </td>
               <td class="text-start">
                 <div class="fw-bold">${item.name}</div>
