@@ -423,4 +423,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  // === XỬ LÝ ẨN HIỆN ĐĂNG NHẬP ===
+  const vungChuaDN = document.getElementById('chua-dn');
+  const vungDaDN = document.getElementById('da-dn');
+  const txtTenUser = document.getElementById('ten-user');
+  const btnNutThoat = document.getElementById('nut-thoat');
+
+  // Lấy thông tin user đã lưu từ trang login
+  const userHienTai = localStorage.getItem('heyshopUser');
+
+  if (userHienTai && vungChuaDN && vungDaDN) {
+    const user = JSON.parse(userHienTai);
+    
+    // Đổi chữ thành tên người dùng 
+    txtTenUser.innerText = "Hi, " + (user.fullname || user.username || "Thành viên");
+    
+    // Ẩn thằng này, hiện thằng kia
+    vungChuaDN.classList.add('d-none');
+    vungDaDN.classList.remove('d-none');
+  }
+
+  // Bấm nút Thoát thì xóa dữ liệu rồi F5 lại trang
+  if (btnNutThoat) {
+    btnNutThoat.addEventListener('click', () => {
+      localStorage.removeItem('heyshopUser');
+      window.location.reload();
+    });
+  }
 });
