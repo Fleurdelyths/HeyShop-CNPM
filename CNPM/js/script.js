@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartBadge = document.querySelector(".cart-badge");
     if (!cartBadge) return;
     const items = getCartItems();
-    const count = items.reduce((sum, item) => sum + Number(item.quantity || 1), 0);
+    const count = items.reduce(
+      (sum, item) => sum + Number(item.quantity || 1),
+      0,
+    );
     cartBadge.innerText = count;
   };
 
@@ -39,11 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameEl = card.querySelector(".card-title");
     const priceEl = card.querySelector(".text-danger.fs-5, .text-danger");
     const imageEl = card.querySelector("img");
-    const sizeInput = card.querySelector("input[type='radio'][name^='size']:checked");
-    const colorInput = card.querySelector("input[type='radio'][name='color']:checked");
+    const sizeInput = card.querySelector(
+      "input[type='radio'][name^='size']:checked",
+    );
+    const colorInput = card.querySelector(
+      "input[type='radio'][name='color']:checked",
+    );
 
-    const sizeLabel = sizeInput ? card.querySelector(`label[for='${sizeInput.id}']`) : null;
-    const colorLabel = colorInput ? card.querySelector(`label[for='${colorInput.id}']`) : null;
+    const sizeLabel = sizeInput
+      ? card.querySelector(`label[for='${sizeInput.id}']`)
+      : null;
+    const colorLabel = colorInput
+      ? card.querySelector(`label[for='${colorInput.id}']`)
+      : null;
 
     return {
       name: nameEl?.textContent.trim() || "Sản phẩm",
@@ -51,7 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
       image: imageEl?.src || "",
       link: window.location.pathname.split("/").pop(),
       size: sizeLabel?.textContent.trim() || sizeInput?.value || "",
-      color: colorLabel?.style.background || colorLabel?.textContent.trim() || colorInput?.value || "",
+      color:
+        colorLabel?.style.background ||
+        colorLabel?.textContent.trim() ||
+        colorInput?.value ||
+        "",
       quantity: 1,
     };
   };
@@ -67,7 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (existingIndex >= 0) {
-      items[existingIndex].quantity = Number(items[existingIndex].quantity || 1) + Number(product.quantity || 1);
+      items[existingIndex].quantity =
+        Number(items[existingIndex].quantity || 1) +
+        Number(product.quantity || 1);
     } else {
       items.push(product);
     }
@@ -92,9 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   };
 
-  const addToCartButtons = Array.from(document.querySelectorAll(".add-to-cart, button")).filter((btn) => {
+  const addToCartButtons = Array.from(
+    document.querySelectorAll(".add-to-cart, button"),
+  ).filter((btn) => {
     const text = btn.textContent.trim().toLowerCase();
-    return btn.classList.contains("add-to-cart") || text === "thêm vào giỏ" || text === "thêm vào giỏ";
+    return (
+      btn.classList.contains("add-to-cart") ||
+      text === "thêm vào giỏ" ||
+      text === "thêm vào giỏ"
+    );
   });
 
   addToCartButtons.forEach((btn) => {
@@ -211,7 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shipValue = getShippingFee();
     const totalValue = subtotalValue + shipValue;
 
-    document.getElementById("subtotal").innerText = formatCurrency(subtotalValue);
+    document.getElementById("subtotal").innerText =
+      formatCurrency(subtotalValue);
     document.getElementById("ship").innerText = formatCurrency(shipValue);
     document.getElementById("total").innerText = formatCurrency(totalValue);
   };
@@ -241,73 +265,73 @@ document.addEventListener("DOMContentLoaded", () => {
         name: "Set Blazer Thanh Lịch",
         price: "699.000đ",
         link: "set1.html",
-        image: "./assets/images/blazer1.png",
+        image: "../assets/images/blazer1.png",
       },
       {
         name: "Set Sơ Mi & Quần Short",
         price: "329.000đ",
         link: "set2.html",
-        image: "./assets/images/somi1.png",
+        image: "../assets/images/somi1.png",
       },
       {
         name: "Set Unisex Streetwear",
         price: "299.000đ",
         link: "set3.html",
-        image: "./assets/images/unisex1.png",
+        image: "../assets/images/unisex1.png",
       },
       {
         name: "Blazer Thanh Lịch",
         price: "800.000đ",
         link: "product1.html",
-        image: "./assets/images/com.jpg",
+        image: "../assets/images/com.jpg",
       },
       {
         name: "Sơ Mi Nâu",
         price: "450.000đ",
         link: "product2.html",
-        image: "./assets/images/vestmau.jpg",
+        image: "../assets/images/vestmau.jpg",
       },
       {
         name: "Chân váy ngắn",
         price: "450.000đ",
         link: "product3.html",
-        image: "./assets/images/chanvayngan.jpg",
+        image: "../assets/images/chanvayngan.jpg",
       },
       {
         name: "Sơ Mi Phối Màu",
         price: "450.000đ",
         link: "product4.html",
-        image: "./assets/images/somitre.jpg",
+        image: "../assets/images/somitre.jpg",
       },
       {
         name: "Sơ Mi Công Sở",
         price: "500.000đ",
         link: "product5.html",
-        image: "./assets/images/somi.jpg",
+        image: "../assets/images/somi.jpg",
       },
       {
         name: "Váy Thời Trang",
         price: "550.000đ",
         link: "product6.html",
-        image: "./assets/images/dam.jpg",
+        image: "../assets/images/dam.jpg",
       },
       {
         name: "Đầm Dạ Hội",
         price: "700.000đ",
         link: "product7.html",
-        image: "./assets/images/damdahoi.jpg",
+        image: "../assets/images/damdahoi.jpg",
       },
       {
         name: "Côm Lê Nam",
         price: "700.000đ",
         link: "product8.html",
-        image: "./assets/images/vest.jpg",
+        image: "../assets/images/vest.jpg",
       },
       {
         name: "Áo len",
         price: "600.000đ",
         link: "product9.html",
-        image: "./assets/images/aolen.jpg",
+        image: "../assets/images/aolen.jpg",
       },
     ];
 

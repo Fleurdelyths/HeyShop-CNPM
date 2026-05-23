@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
+    >
       <div class="container">
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item">
@@ -25,7 +27,11 @@
           </li>
         </ul>
         <a class="navbar-brand mx-auto" href="index.html">
-          <img src="../assets/icons/cart3.svg" alt="Logo" style="height: 40px" />
+          <img
+            src="../assets/icons/cart3.svg"
+            alt="Logo"
+            style="height: 40px"
+          />
         </a>
         <div class="d-flex align-items-center gap-3">
           <div class="search-container position-relative">
@@ -43,11 +49,21 @@
           </div>
           <div class="d-flex gap-3 align-items-center">
             <a href="login.html">
-              <img src="../assets/icons/person-circle.svg" width="24" height="24" alt="User" />
+              <img
+                src="../assets/icons/person-circle.svg"
+                width="24"
+                height="24"
+                alt="User"
+              />
             </a>
             <div class="position-relative">
               <a href="../cart.html">
-                <img src="../assets/icons/cart3.svg" width="24" height="24" alt="Cart" />
+                <img
+                  src="../assets/icons/cart3.svg"
+                  width="24"
+                  height="24"
+                  alt="Cart"
+                />
               </a>
               <span class="cart-badge">0</span>
             </div>
@@ -62,10 +78,9 @@
         <p class="text-muted">Khám phá bộ sưu tập mới nhất từ Hey Shop</p>
       </div>
     </header>
-    <!-- Main Content: Bộ lọc & Sản phẩm -->
+
     <main class="container my-4">
       <div class="row g-4">
-        <!-- Cột bên trái: Bộ lọc (Sidebar Filter) -->
         <aside class="col-lg-3">
           <div
             class="border rounded p-3 bg-white sticky-top"
@@ -73,7 +88,6 @@
           >
             <h5 class="fw-bold mb-3 border-bottom pb-2">BỘ LỌC TÌM KIẾM</h5>
 
-            <!-- Nhóm lọc 1: Danh mục con -->
             <div class="mb-4">
               <h6 class="fw-bold text-secondary">Nhóm sản phẩm</h6>
               <div class="form-check my-2">
@@ -101,7 +115,6 @@
               </div>
             </div>
 
-            <!-- Nhóm lọc 2: Khoảng giá -->
             <div class="mb-4">
               <h6 class="fw-bold text-secondary">Khoảng giá</h6>
               <div class="form-check my-2">
@@ -151,7 +164,6 @@
               </div>
             </div>
 
-            <!-- Nhóm lọc 3: Kích thước -->
             <div class="mb-3">
               <h6 class="fw-bold text-secondary">Kích cỡ (Size)</h6>
               <div class="d-flex gap-2 flex-wrap mt-2">
@@ -169,386 +181,542 @@
             </button>
           </div>
         </aside>
+
         <div class="col-lg-9">
           <div class="row g-4">
-            <!--sp1- muốn thêm sản phẩm thì cứ copy khổi div này xong clone ra ra được nhé -->
             <div class="col-lg-4 col-md-6">
               <div class="product-card shadow-sm h-100">
                 <div class="product-img-wrapper">
-                  <img src="../assets/images/com.jpg" class="card-img-top" alt="Sản phẩm" />
+                  <img
+                    src="../assets/images/com.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
                   <div class="product-overlay">
                     <a href="product1.html">
-                      <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
                     </a>
                   </div>
                 </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Blazer Thanh Lịch</h5>
-              <p class="text-muted small">Phong cách Business casual</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="m1" hidden checked>
-                <label for="m1" class="size-box">M</label>
-                <input type="radio" name="size1" id="l1" hidden>
-                <label for="l1" class="size-box">L</label>
-                <input type="radio" name="size1" id="xl1" hidden>
-                <label for="xl1" class="size-box">XL</label>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Blazer Thanh Lịch</h5>
+                  <p class="text-muted small">Phong cách Business casual</p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size1" id="m1" hidden checked />
+                    <label for="m1" class="size-box">M</label>
+                    <input type="radio" name="size1" id="l1" hidden />
+                    <label for="l1" class="size-box">L</label>
+                    <input type="radio" name="size1" id="xl1" hidden />
+                    <label for="xl1" class="size-box">XL</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color1" id="cl1" checked />
+                    <label
+                      for="cl1"
+                      class="color-item"
+                      style="background-color: #000000"
+                    ></label>
+                    <input type="radio" name="color1" id="cl2" />
+                    <label
+                      for="cl2"
+                      class="color-item"
+                      style="background-color: #696969"
+                    ></label>
+                    <input type="radio" name="color1" id="cl3" />
+                    <label
+                      for="cl3"
+                      class="color-item"
+                      style="background-color: #000080"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">800.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color1" id="cl1" checked>
-                <label for="cl1" class="color-item" style="background: #000000;"></label>
-                <input type="radio" name="color1" id="cl2">
-                <label for="cl2" class="color-item" style="background: #696969;"></label>
-                <input type="radio" name="color1" id="cl3">
-                <label for="cl3" class="color-item" style="background: #000080;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">800.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
             </div>
-          </div>
-        </div>
-        <!--copy den khuc nay`-->
 
-        <!-- sp2 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img
-                src="../assets/images/vestmau.jpg"
-                class="card-img-top"
-                alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="product2.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/vestmau.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product2.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Sơ Mi Nâu</h5>
+                  <p class="text-muted small">
+                    Chất liệu cotton mềm, thoáng khí
+                  </p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size2" id="m2" hidden checked />
+                    <label for="m2" class="size-box">M</label>
+                    <input type="radio" name="size2" id="l2" hidden />
+                    <label for="l2" class="size-box">L</label>
+                    <input type="radio" name="size2" id="xl2" hidden />
+                    <label for="xl2" class="size-box">XL</label>
+                    <input type="radio" name="size2" id="xxl" hidden />
+                    <label for="xxl" class="size-box">XXL</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color2" id="cl4" checked />
+                    <label
+                      for="cl4"
+                      class="color-item"
+                      style="background-color: #8b4513"
+                    ></label>
+                    <input type="radio" name="color2" id="cl5" />
+                    <label
+                      for="cl5"
+                      class="color-item"
+                      style="background-color: #f5f5dc"
+                    ></label>
+                    <input type="radio" name="color2" id="cl6" />
+                    <label
+                      for="cl6"
+                      class="color-item"
+                      style="background-color: #ddcece"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">450.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Sơ Mi Nâu</h5>
-              <p class="text-muted small">Chất liệu cotton mềm, thoáng khí</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="m2" hidden checked>
-                <label for="m2" class="size-box">M</label>
-                <input type="radio" name="size1" id="l2" hidden>
-                <label for="l2" class="size-box">L</label>
-                <input type="radio" name="size1" id="xl2" hidden>
-                <label for="xl2" class="size-box">XL</label>
-                <input type="radio" name="size1" id="xxl" hidden>
-                <label for="xxl" class="size-box">XXL</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color2" id="cl4" checked>
-                <label for="cl4" class="color-item" style="background: #8B4513;"></label>
-                <input type="radio" name="color2" id="cl5">
-                <label for="cl5" class="color-item" style="background: #F5F5DC;"></label>
-                <input type="radio" name="color2" id="cl6">
-                <label for="cl6" class="color-item" style="background: #ddcece;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">450.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img
-                src="../assets/images/chanvayngan.jpg"
-                class="card-img-top"
-                alt="Sản phẩm"
-              />
-              <div class="product-overlay">
-                <a href="product3.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Chân váy ngắn</h5>
-              <p class="text-muted small">Chất liệu Vải thun hoặc cotton co giãn</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s1" hidden checked>
-                <label for="s1" class="size-box">S</label>
-                <input type="radio" name="size1" id="m3" hidden>
-                <label for="m3" class="size-box">M</label>
-                <input type="radio" name="size1" id="l3" hidden>
-                <label for="l3" class="size-box">L</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color3" id="cl7" checked>
-                <label for="cl7" class="color-item" style="background: #000000;"></label>
-                <input type="radio" name="color3" id="cl8">
-                <label for="cl8" class="color-item" style="background: #FFFFFF;"></label>
-                <input type="radio" name="color3" id="cl9">
-                <label for="cl9" class="color-item" style="background: #FADADD;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">450.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp4 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img
-                src="../assets/images/somitre.jpg"
-                class="card-img-top"
-                alt="Sản phẩm"
-              />
-              <div class="product-overlay">
-                <a href="product4.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/chanvayngan.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product3.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Chân váy ngắn</h5>
+                  <p class="text-muted small">
+                    Chất liệu Vải thun hoặc cotton co giãn
+                  </p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size3" id="s1" hidden checked />
+                    <label for="s1" class="size-box">S</label>
+                    <input type="radio" name="size3" id="m3" hidden />
+                    <label for="m3" class="size-box">M</label>
+                    <input type="radio" name="size3" id="l3" hidden />
+                    <label for="l3" class="size-box">L</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color3" id="cl7" checked />
+                    <label
+                      for="cl7"
+                      class="color-item"
+                      style="background-color: #000000"
+                    ></label>
+                    <input type="radio" name="color3" id="cl8" />
+                    <label
+                      for="cl8"
+                      class="color-item"
+                      style="background-color: #ffffff"
+                    ></label>
+                    <input type="radio" name="color3" id="cl9" />
+                    <label
+                      for="cl9"
+                      class="color-item"
+                      style="background-color: #fadadd"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">450.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Sơ Mi Phối Màu</h5>
-              <p class="text-muted small">Chất liệu cotton pha polyester</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s2" hidden checked>
-                <label for="s2" class="size-box">S</label>
-                <input type="radio" name="size1" id="m4" hidden>
-                <label for="m4" class="size-box">M</label>
-                <input type="radio" name="size1" id="l4" hidden>
-                <label for="l4" class="size-box">L</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color4" id="cl10" checked>
-                <label for="cl10" class="color-item" style="background: #FFFFFF;"></label>
-                <input type="radio" name="color4" id="cl11">
-                <label for="cl11" class="color-item" style="background: #88b9f1;"></label>
-                <input type="radio" name="color4" id="cl12">
-                <label for="cl12" class="color-item" style="background: #ffd1ff;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">450.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp5 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img src="../assets/images/somi.jpg" class="card-img-top" alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="product5.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Sơ Mi Công Sở</h5>
-              <p class="text-muted small">Chất liệu Cotton cao cấp</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s3" hidden checked>
-                <label for="s3" class="size-box">S</label>
-                <input type="radio" name="size1" id="m5" hidden>
-                <label for="m5" class="size-box">M</label>
-                <input type="radio" name="size1" id="l5" hidden>
-                <label for="l5" class="size-box">L</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color5" id="cl13" checked>
-                <label for="cl13" class="color-item" style="background: #323131;"></label>
-                <input type="radio" name="color5" id="cl14">
-                <label for="cl14" class="color-item" style="background: #fbfbfb;"></label>
-                <input type="radio" name="color5" id="cl15">
-                <label for="cl15" class="color-item" style="background: #8b2313;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">500.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp6 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img src="../assets/images/dam.jpg" class="card-img-top" alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="product6.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/somitre.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product4.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Sơ Mi Phối Màu</h5>
+                  <p class="text-muted small">Chất liệu cotton pha polyester</p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size4" id="s2" hidden checked />
+                    <label for="s2" class="size-box">S</label>
+                    <input type="radio" name="size4" id="m4" hidden />
+                    <label for="m4" class="size-box">M</label>
+                    <input type="radio" name="size4" id="l4" hidden />
+                    <label for="l4" class="size-box">L</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color4" id="cl10" checked />
+                    <label
+                      for="cl10"
+                      class="color-item"
+                      style="background-color: #ffffff"
+                    ></label>
+                    <input type="radio" name="color4" id="cl11" />
+                    <label
+                      for="cl11"
+                      class="color-item"
+                      style="background-color: #88b9f1"
+                    ></label>
+                    <input type="radio" name="color4" id="cl12" />
+                    <label
+                      for="cl12"
+                      class="color-item"
+                      style="background-color: #ffd1ff"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">450.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Váy Thời Trang</h5>
-              <p class="text-muted small">Chất liệu Vải thun co giãn</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s4" hidden checked>
-                <label for="s4" class="size-box">S</label>
-                <input type="radio" name="size1" id="m6" hidden>
-                <label for="m6" class="size-box">M</label>
-                <input type="radio" name="size1" id="l6" hidden>
-                <label for="l6" class="size-box">L</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color6" id="cl16" checked>
-                <label for="cl16" class="color-item" style="background: #88b9f1;"></label>
-                <input type="radio" name="color6" id="cl17">
-                <label for="cl17" class="color-item" style="background: #f83bb9;"></label>
-                <input type="radio" name="color6" id="cl18">
-                <label for="cl18" class="color-item" style="background: #c01a00;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">550.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp7 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img
-                src="../assets/images/damdahoi.jpg"
-                class="card-img-top"
-                alt="Sản phẩm"
-              />
-              <div class="product-overlay">
-                <a href="product7.html">
-                   <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
-              </div>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Đầm Dạ Hội</h5>
-              <p class="text-muted small">Chất liệu Satin hoặc vải ánh kim.</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s5" hidden checked>
-                <label for="s5" class="size-box">S</label>
-                <input type="radio" name="size1" id="m7" hidden>
-                <label for="m7" class="size-box">M</label>
-                <input type="radio" name="size1" id="l7" hidden>
-                <label for="l7" class="size-box">L</label>
-              </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color7" id="cl19" checked>
-                <label for="cl19" class="color-item" style="background: #eae6c0;"></label>
-                <input type="radio" name="color7" id="cl20">
-                <label for="cl20" class="color-item" style="background: #b694df;"></label>
-                <input type="radio" name="color7" id="cl21">
-                <label for="cl21" class="color-item" style="background: #000000;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">700.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- sp8 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img src="../assets/images/vest.jpg" class="card-img-top" alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="product8.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/somi.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product5.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Sơ Mi Công Sở</h5>
+                  <p class="text-muted small">Chất liệu Cotton cao cấp</p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size5" id="s3" hidden checked />
+                    <label for="s3" class="size-box">S</label>
+                    <input type="radio" name="size5" id="m5" hidden />
+                    <label for="m5" class="size-box">M</label>
+                    <input type="radio" name="size5" id="l5" hidden />
+                    <label for="l5" class="size-box">L</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color5" id="cl13" checked />
+                    <label
+                      for="cl13"
+                      class="color-item"
+                      style="background-color: #323131"
+                    ></label>
+                    <input type="radio" name="color5" id="cl14" />
+                    <label
+                      for="cl14"
+                      class="color-item"
+                      style="background-color: #fbfbfb"
+                    ></label>
+                    <input type="radio" name="color5" id="cl15" />
+                    <label
+                      for="cl15"
+                      class="color-item"
+                      style="background-color: #8b2313"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">500.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Côm Lê Nam</h5>
-              <p class="text-muted small">Chất liệu Vải wool pha polyester</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="m8" hidden checked>
-                <label for="m8" class="size-box">M</label>
-                <input type="radio" name="size1" id="l8" hidden>
-                <label for="l8" class="size-box">L</label>
-                <input type="radio" name="size1" id="xl3" hidden>
-                <label for="xl3" class="size-box">XL</label>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/dam.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product6.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Váy Thời Trang</h5>
+                  <p class="text-muted small">Chất liệu Vải thun co giãn</p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size6" id="s4" hidden checked />
+                    <label for="s4" class="size-box">S</label>
+                    <input type="radio" name="size6" id="m6" hidden />
+                    <label for="m6" class="size-box">M</label>
+                    <input type="radio" name="size6" id="l6" hidden />
+                    <label for="l6" class="size-box">L</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color6" id="cl16" checked />
+                    <label
+                      for="cl16"
+                      class="color-item"
+                      style="background-color: #88b9f1"
+                    ></label>
+                    <input type="radio" name="color6" id="cl17" />
+                    <label
+                      for="cl17"
+                      class="color-item"
+                      style="background-color: #f83bb9"
+                    ></label>
+                    <input type="radio" name="color6" id="cl18" />
+                    <label
+                      for="cl18"
+                      class="color-item"
+                      style="background-color: #c01a00"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">550.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color8" id="cl22" checked>
-                <label for="cl22" class="color-item" style="background: #ae1212;"></label>
-                <input type="radio" name="color8" id="cl23">
-                <label for="cl23" class="color-item" style="background: #352a7d;"></label>
-                <input type="radio" name="color8" id="cl24">
-                <label for="cl24" class="color-item" style="background: #4b4848;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">700.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
             </div>
-          </div>
-        </div>
-        <!-- sp9 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-card shadow-sm h-100">
-            <div class="product-img-wrapper">
-              <img src="../assets/images/aolen.jpg" class="card-img-top" alt="Sản phẩm" />
-              <div class="product-overlay">
-                <a href="product9.html">
-                  <button class="btn btn-light btn-sm fw-bold">XEM NHANH</button>
-                </a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/damdahoi.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product7.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Đầm Dạ Hội</h5>
+                  <p class="text-muted small">
+                    Chất liệu Satin hoặc vải ánh kim.
+                  </p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size7" id="s5" hidden checked />
+                    <label for="s5" class="size-box">S</label>
+                    <input type="radio" name="size7" id="m7" hidden />
+                    <label for="m7" class="size-box">M</label>
+                    <input type="radio" name="size7" id="l7" hidden />
+                    <label for="l7" class="size-box">L</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color7" id="cl19" checked />
+                    <label
+                      for="cl19"
+                      class="color-item"
+                      style="background-color: #eae6c0"
+                    ></label>
+                    <input type="radio" name="color7" id="cl20" />
+                    <label
+                      for="cl20"
+                      class="color-item"
+                      style="background-color: #b694df"
+                    ></label>
+                    <input type="radio" name="color7" id="cl21" />
+                    <label
+                      for="cl21"
+                      class="color-item"
+                      style="background-color: #000000"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">700.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Áo len</h5>
-              <p class="text-muted small">Chất liệu Len cotton pha wool, mềm mại, co giãn nhẹ, thoáng khí</p>
-              <div class="small text-muted mb-1">
-                <span>Size:</span>
-                <input type="radio" name="size1" id="s6" hidden checked>
-                <label for="s6" class="size-box">S</label>
-                <input type="radio" name="size1" id="m9" hidden checked>
-                <label for="m9" class="size-box">M</label>
-                <input type="radio" name="size1" id="l9" hidden>
-                <label for="l9" class="size-box">L</label>
-                <input type="radio" name="size1" id="xl4" hidden>
-                <label for="xl4" class="size-box">XL</label>
-                <input type="radio" name="size1" id="xxl2" hidden>
-                <label for="xxl2" class="size-box">XXL</label>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/vest.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product8.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Côm Lê Nam</h5>
+                  <p class="text-muted small">
+                    Chất liệu Vải wool pha polyester
+                  </p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size8" id="m8" hidden checked />
+                    <label for="m8" class="size-box">M</label>
+                    <input type="radio" name="size8" id="l8" hidden />
+                    <label for="l8" class="size-box">L</label>
+                    <input type="radio" name="size8" id="xl3" hidden />
+                    <label for="xl3" class="size-box">XL</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color8" id="cl22" checked />
+                    <label
+                      for="cl22"
+                      class="color-item"
+                      style="background-color: #ae1212"
+                    ></label>
+                    <input type="radio" name="color8" id="cl23" />
+                    <label
+                      for="cl23"
+                      class="color-item"
+                      style="background-color: #352a7d"
+                    ></label>
+                    <input type="radio" name="color8" id="cl24" />
+                    <label
+                      for="cl24"
+                      class="color-item"
+                      style="background-color: #4b4848"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">700.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
               </div>
-              <div class="color-select">
-                <span>Màu:</span>
-                <input type="radio" name="color9" id="cl25" checked>
-                <label for="cl25" class="color-item" style="background: #D3D3D3;"></label>
-                <input type="radio" name="color9" id="cl26">
-                <label for="cl26" class="color-item" style="background: #2F2F2F;"></label>
-                <input type="radio" name="color9" id="cl27">
-                <label for="cl27" class="color-item" style="background: #D2B48C;"></label>
-              </div>
-              <p class="text-danger fs-5 fw-bold">600.000đ</p>
-              <button class="btn btn-dark w-100 py-2 add-to-cart">
-                THÊM VÀO GIỎ
-              </button>
             </div>
-          </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="product-card shadow-sm h-100">
+                <div class="product-img-wrapper">
+                  <img
+                    src="../assets/images/aolen.jpg"
+                    class="card-img-top"
+                    alt="Sản phẩm"
+                  />
+                  <div class="product-overlay">
+                    <a href="product9.html">
+                      <button class="btn btn-light btn-sm fw-bold">
+                        XEM NHANH
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Áo len</h5>
+                  <p class="text-muted small">
+                    Chất liệu Len cotton pha wool...
+                  </p>
+                  <div class="small text-muted mb-1">
+                    <span>Size:</span>
+                    <input type="radio" name="size9" id="s6" hidden checked />
+                    <label for="s6" class="size-box">S</label>
+                    <input type="radio" name="size9" id="m9" hidden />
+                    <label for="m9" class="size-box">M</label>
+                    <input type="radio" name="size9" id="l9" hidden />
+                    <label for="l9" class="size-box">L</label>
+                    <input type="radio" name="size9" id="xl4" hidden />
+                    <label for="xl4" class="size-box">XL</label>
+                    <input type="radio" name="size9" id="xxl2" hidden />
+                    <label for="xxl2" class="size-box">XXL</label>
+                  </div>
+                  <div class="color-select">
+                    <span>Màu:</span>
+                    <input type="radio" name="color9" id="cl25" checked />
+                    <label
+                      for="cl25"
+                      class="color-item"
+                      style="background-color: #d3d3d3"
+                    ></label>
+                    <input type="radio" name="color9" id="cl26" />
+                    <label
+                      for="cl26"
+                      class="color-item"
+                      style="background-color: #2f2f2f"
+                    ></label>
+                    <input type="radio" name="color9" id="cl27" />
+                    <label
+                      for="cl27"
+                      class="color-item"
+                      style="background-color: #d2b48c"
+                    ></label>
+                  </div>
+                  <p class="text-danger fs-5 fw-bold">600.000đ</p>
+                  <button class="btn btn-dark w-100 py-2 add-to-cart">
+                    THÊM VÀO GIỎ
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <!-- Footer -->
+
     <footer class="footer py-5 border-top">
       <div class="container text-center">
         <h5 class="fw-bold mb-3">Hey Shop</h5>
