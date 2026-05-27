@@ -74,7 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return {
       name: nameEl?.textContent.trim() || "Sản phẩm",
       price: parseCurrency(priceEl?.textContent || "0"),
-      image: normalizeImagePath(imageEl?.getAttribute("src") || imageEl?.src || ""),
+      image: normalizeImagePath(
+        imageEl?.getAttribute("src") || imageEl?.src || "",
+      ),
       link: window.location.pathname.split("/").pop(),
       size: sizeLabel?.textContent.trim() || sizeInput?.value || "",
       color:
@@ -256,6 +258,131 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.renderCart = renderCart;
+
+  const filterCategoryInputs = Array.from(
+    document.querySelectorAll("input[type='checkbox'][id^='cat']"),
+  );
+  const filterPriceInputs = Array.from(
+    document.querySelectorAll("input[name='filterPrice']"),
+  );
+  const filterSizeButtons = Array.from(
+    document.querySelectorAll(".filter-size"),
+  );
+  const applyFilterButton = document.querySelector(".filter-apply-btn");
+  const productCards = Array.from(document.querySelectorAll(".product-card"));
+
+  const getCardCategory = (card) => {
+    const name =
+      card.querySelector(".card-title")?.textContent?.toLowerCase() || "";
+    if (
+      name.includes("blazer") ||
+      name.includes("vest") ||
+      name.includes("côm lê")
+    ) {
+      return "blazer-vest";
+    }
+    if (name.includes("sơ mi") || name.includes("short")) {
+      return "shirt-short";
+    }
+    return "streetwear-unisex";
+  };
+
+  const getCardSizes = (card) =>
+    Array.from(card.querySelectorAll(".size-box"))
+      .map((label) => label.textContent.trim())
+      .filter(Boolean);
+
+  const getSelectedSize = () => {
+    const activeButton = filterSizeButtons.find((button) =>
+      button.classList.contains("active"),
+    );
+    return activeButton?.dataset.size || "";
+  };
+
+  const getSelectedCategories = () =>
+    filterCategoryInputs
+      .filter((input) => input.checked)
+      .map((input) => input.value);
+
+  const filterProducts = () => {
+    const selectedCategories = getSelectedCategories();
+    const selectedPrice =
+      filterPriceInputs.find((input) => input.checked)?.value || "all";
+    const selectedSize = getSelectedSize();
+
+    productCards.forEach((card) => {
+      const category = getCardCategory(card);
+      const price = parseCurrency(
+        card.querySelector(".text-danger")?.textContent || "0",
+      );
+      const sizes = getCardSizes(card);
+
+      let isVisible = true;
+
+      if (selectedCategories.length && !selectedCategories.includes(category)) {
+        isVisible = false;
+      }
+
+      if (selectedPrice === "under300" && price >= 300000) {
+        isVisible = false;
+      } else if (
+        selectedPrice === "300-600" &&
+        (price < 300000 || price > 600000)
+      ) {
+        isVisible = false;
+      } else if (selectedPrice === "over600" && price <= 600000) {
+        isVisible = false;
+      }
+
+      if (selectedSize && !sizes.includes(selectedSize)) {
+        isVisible = false;
+      }
+
+      const colWrapper = card.closest(".col-lg-4, .col-md-6");
+      if (colWrapper) {
+        colWrapper.style.display = isVisible ? "" : "none";
+      } else {
+        card.style.display = isVisible ? "" : "none";
+      }
+    });
+  };
+
+  const setSizeButtonState = (selectedSize) => {
+    filterSizeButtons.forEach((button) => {
+      const isSelected = button.dataset.size === selectedSize;
+      button.classList.toggle("active", isSelected);
+      button.classList.toggle("btn-secondary", isSelected);
+      button.classList.toggle("btn-outline-secondary", !isSelected);
+    });
+  };
+
+  if (productCards.length > 0 && filterCategoryInputs.length > 0) {
+    filterCategoryInputs.forEach((input) => {
+      input.addEventListener("change", filterProducts);
+    });
+
+    filterPriceInputs.forEach((input) => {
+      input.addEventListener("change", filterProducts);
+    });
+
+    filterSizeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.size;
+        const currentSelected = getSelectedSize();
+        setSizeButtonState(currentSelected === selected ? "" : selected);
+        filterProducts();
+      });
+    });
+
+    if (applyFilterButton) {
+      applyFilterButton.addEventListener("click", () => {
+        filterProducts();
+      });
+    }
+
+    filterProducts();
+  }
+
   window.goCheckout = () => {
     const items = getCartItems();
     if (!items.length) {
@@ -439,29 +566,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   // === XỬ LÝ ẨN HIỆN ĐĂNG NHẬP ===
-  const vungChuaDN = document.getElementById('chua-dn');
-  const vungDaDN = document.getElementById('da-dn');
-  const txtTenUser = document.getElementById('ten-user');
-  const btnNutThoat = document.getElementById('nut-thoat');
+  const vungChuaDN = document.getElementById("chua-dn");
+  const vungDaDN = document.getElementById("da-dn");
+  const txtTenUser = document.getElementById("ten-user");
+  const btnNutThoat = document.getElementById("nut-thoat");
 
   // Lấy thông tin user đã lưu từ trang login
-  const userHienTai = localStorage.getItem('heyshopUser');
+  const userHienTai = localStorage.getItem("heyshopUser");
 
   if (userHienTai && vungChuaDN && vungDaDN) {
     const user = JSON.parse(userHienTai);
-    
-    // Đổi chữ thành tên người dùng 
-    txtTenUser.innerText = "Hi, " + (user.fullname || user.username || "Thành viên");
-    
+
+    // Đổi chữ thành tên người dùng
+    txtTenUser.innerText =
+      "Hi, " + (user.fullname || user.username || "Thành viên");
+
     // Ẩn thằng này, hiện thằng kia
-    vungChuaDN.classList.add('d-none');
-    vungDaDN.classList.remove('d-none');
+    vungChuaDN.classList.add("d-none");
+    vungDaDN.classList.remove("d-none");
   }
 
   // Bấm nút Thoát thì xóa dữ liệu rồi F5 lại trang
   if (btnNutThoat) {
-    btnNutThoat.addEventListener('click', () => {
-      localStorage.removeItem('heyshopUser');
+    btnNutThoat.addEventListener("click", () => {
+      localStorage.removeItem("heyshopUser");
       window.location.reload();
     });
   }

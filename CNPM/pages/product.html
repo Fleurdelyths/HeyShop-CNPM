@@ -95,6 +95,7 @@
                   class="form-check-input"
                   type="checkbox"
                   id="cat1"
+                  value="blazer-vest"
                   checked
                 />
                 <label class="form-check-input-label small" for="cat1"
@@ -102,13 +103,25 @@
                 >
               </div>
               <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" id="cat2" />
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="cat2"
+                  value="shirt-short"
+                  checked
+                />
                 <label class="form-check-input-label small" for="cat2"
                   >Set Sơ mi & Short</label
                 >
               </div>
               <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" id="cat3" />
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="cat3"
+                  value="streetwear-unisex"
+                  checked
+                />
                 <label class="form-check-input-label small" for="cat3"
                   >Streetwear / Unisex</label
                 >
@@ -123,6 +136,7 @@
                   type="radio"
                   name="filterPrice"
                   id="price1"
+                  value="all"
                   checked
                 />
                 <label class="form-check-input-label small" for="price1"
@@ -135,6 +149,7 @@
                   type="radio"
                   name="filterPrice"
                   id="price2"
+                  value="under300"
                 />
                 <label class="form-check-input-label small" for="price2"
                   >Dưới 300.000đ</label
@@ -146,6 +161,7 @@
                   type="radio"
                   name="filterPrice"
                   id="price3"
+                  value="300-600"
                 />
                 <label class="form-check-input-label small" for="price3"
                   >300.000đ - 600.000đ</label
@@ -157,6 +173,7 @@
                   type="radio"
                   name="filterPrice"
                   id="price4"
+                  value="over600"
                 />
                 <label class="form-check-input-label small" for="price4"
                   >Trên 600.000đ</label
@@ -167,16 +184,37 @@
             <div class="mb-3">
               <h6 class="fw-bold text-secondary">Kích cỡ (Size)</h6>
               <div class="d-flex gap-2 flex-wrap mt-2">
-                <button class="btn btn-outline-secondary btn-sm px-3">S</button>
-                <button class="btn btn-outline-secondary btn-sm px-3">M</button>
-                <button class="btn btn-outline-secondary btn-sm px-3">L</button>
-                <button class="btn btn-outline-secondary btn-sm px-3">
+                <button
+                  class="btn btn-outline-secondary btn-sm px-3 filter-size"
+                  data-size="S"
+                >
+                  S
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm px-3 filter-size"
+                  data-size="M"
+                >
+                  M
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm px-3 filter-size"
+                  data-size="L"
+                >
+                  L
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm px-3 filter-size"
+                  data-size="XL"
+                >
                   XL
                 </button>
               </div>
             </div>
 
-            <button class="btn btn-danger btn-sm w-100 mt-3 fw-bold">
+            <button
+              type="button"
+              class="btn btn-danger btn-sm w-100 mt-3 fw-bold filter-apply-btn"
+            >
               Áp dụng bộ lọc
             </button>
           </div>
