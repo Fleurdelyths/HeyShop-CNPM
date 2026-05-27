@@ -12,8 +12,6 @@ const usersFile = path.join(dataDir, 'users.json');
 const productsFile = path.join(dataDir, 'products.json');
 const cartsFile = path.join(dataDir, 'carts.json');
 
-const cartsFile = path.join(dataDir,'carts.json');
-app.use(express.static(path.join(__dirname)));
 
 const defaultProducts = [
   { id: 1, name: 'Áo thun HeyShop', price: 199000, description: 'Áo cotton mềm mịn, mặc thoải mái.', category: 'Thời trang' },
