@@ -74,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return {
       name: nameEl?.textContent.trim() || "Sản phẩm",
       price: parseCurrency(priceEl?.textContent || "0"),
-      image: normalizeImagePath(
-        imageEl?.getAttribute("src") || imageEl?.src || "",
-      ),
+      image: imageEl?.getAttribute("src") || imageEl?.src || "",
       link: window.location.pathname.split("/").pop(),
       size: sizeLabel?.textContent.trim() || sizeInput?.value || "",
       color:
@@ -176,17 +174,17 @@ document.addEventListener("DOMContentLoaded", () => {
       cartTable.innerHTML = items
         .map(
           (item, index) => `
-            <tr data-index="${index}">
+            <tr data-index="${index}" class="cart-item-row">
               <td>
-                <input type="checkbox" class="form-check-input">
+                <input type="checkbox" class="form-check-input cart-item-checkbox" data-index="${index}">
               </td>
               <td>
-                <img src="${normalizeImagePath(item.image)}" width="80" class="rounded" />
+                <img src="${item.image}" width="80" class="rounded" />
               </td>
               <td class="text-start">
                 <div class="fw-bold">${item.name}</div>
-                ${item.size ? `<div>Size: ${item.size}</div>` : ""}
-                ${item.color ? `<div>Màu: ${item.color}</div>` : ""}
+                ${item.size ? `<div class="small text-muted">Size: ${item.size}</div>` : ""}
+                ${item.color ? `<div class="small text-muted">Màu: ${item.color}</div>` : ""}
               </td>
               <td>${formatCurrency(item.price)}</td>
               <td>
@@ -243,10 +241,27 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    const subtotalValue = getCartItems().reduce(
-      (sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1),
-      0,
+    document.querySelectorAll(".cart-item-checkbox").forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        updateCartTotals();
+      });
+    });
+
+    updateCartTotals();
+  };
+
+  const updateCartTotals = () => {
+    const checkedCheckboxes = Array.from(
+      document.querySelectorAll(".cart-item-checkbox:checked"),
     );
+    const items = getCartItems();
+
+    const subtotalValue = checkedCheckboxes.reduce((sum, checkbox) => {
+      const index = Number(checkbox.dataset.index);
+      const item = items[index];
+      if (!item) return sum;
+      return sum + Number(item.price || 0) * Number(item.quantity || 1);
+    }, 0);
 
     const shipValue = getShippingFee();
     const totalValue = subtotalValue + shipValue;
@@ -258,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.renderCart = renderCart;
+  window.updateCartTotals = updateCartTotals;
 
   const filterCategoryInputs = Array.from(
     document.querySelectorAll("input[type='checkbox'][id^='cat']"),
